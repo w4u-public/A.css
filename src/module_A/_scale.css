@@ -1,0 +1,84 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	@scale
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+[:--A*="@scale"],
+[:--A*="@SCALE"] > * {
+	--A_A2: steps2;
+	--A_TD: 0.5;
+	--A_E: var(--A_out-expo);
+	--A_CSC: calc(1 * var(--A_L));
+}
+
+[:--A*="@scale"]:not([:--A*="@scale-"]):not([:--A*="@scale:r"]),
+[:--A*="@SCALE"]:not([:--A*="@SCALE-"]):not([:--A*="@SCALE:r"]) > * {
+	--A_SX1: calc(1 + var(--A_CSC));
+	--A_SY1: calc(1 + var(--A_CSC));
+	--A_SZ1: calc(1 + var(--A_CSC));
+}
+
+/*-----------------------
+	@scale-x(:r|-in|-out)?
+-----------------------*/
+
+[:--A*="@scale-x"],
+[:--A*="@SCALE-x"] > * {
+	--A_SX1: calc(1 + var(--A_CSC));
+}
+
+/* In */
+[:--A*="@scale-x-in"],
+[:--A*="@SCALE-x-in"] > * {
+	--A_SX0: 0;
+	--A_SX1: var(--A_CSC);
+}
+
+/* Out */
+[:--A*="@scale-x-out"],
+[:--A*="@SCALE-x-out"] > * {
+	--A_SX0: var(--A_CSC);
+	--A_SX1: 0;
+}
+
+/* Invert */
+[:--A*="@scale:r"],
+[:--A*="@SCALE:r"] > *,
+[:--A*="@scale-x:r"],
+[:--A*="@SCALE-x:r"] > * {
+	--A_SX0: calc(1 + var(--A_CSC));
+	--A_SX1: 1;
+}
+
+/*-----------------------
+	@scale-y(:r|-in|-out)?
+-----------------------*/
+
+[:--A*="@scale-y"],
+[:--A*="@SCALE-y"] > * {
+	--A_SY1: calc(1 + var(--A_CSC));
+}
+
+/* In */
+[:--A*="@scale-y-in"],
+[:--A*="@SCALE-y-in"] > * {
+	--A_SY0: 0;
+	--A_SY1: var(--A_CSC);
+}
+
+/* Out */
+[:--A*="@scale-y-out"],
+[:--A*="@SCALE-y-out"] > * {
+	--A_SY0: var(--A_CSC);
+	--A_SY1: 0;
+}
+
+/* Invert */
+[:--A*="@scale:r"],
+[:--A*="@SCALE:r"] > *,
+[:--A*="@scale-y:r"],
+[:--A*="@SCALE-y:r"] > * {
+	--A_SY0: calc(1 + var(--A_CSC));
+	--A_SY1: 1;
+}

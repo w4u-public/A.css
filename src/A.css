@@ -1,0 +1,15 @@
+/*!
+ * A.css - http://animation.css-initials.com/
+ * Version: 0.9
+ * License: MIT
+ */
+
+@import url('module_A/_init.css');
+@import url('module_A/_keyframes.css');
+@import url('module_A/_fade.css');
+@import url('module_A/_slide.css');
+@import url('module_A/_rotate.css');
+@import url('module_A/_scale.css');
+@import url('module_A/_bounce.css');
+@import url('module_A/_modifier.css');
+@import url('module_A/_modifier_timing-shift.css');

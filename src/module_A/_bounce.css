@@ -1,0 +1,137 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	@bounce
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+[:--A*="@bounce"],
+[:--A*="@BOUNCE"] > * {
+	--A_A2: steps10;
+	--A_TD: 1;
+}
+
+/* Vertical */
+[:--A*="@bounce"]:not([:--A*="@bounce-"]),
+[:--A*="@BOUNCE"]:not([:--A*="@BOUNCE-"]) > *,
+[:--A*="@bounce-v"],
+[:--A*="@BOUNCE-v"] > *,
+[:--A*="@bounce-j"],
+[:--A*="@BOUNCE-j"] > * {
+	--A_RBV: 1;
+	--A_SY0: calc(1 - var(--A_SP0) * var(--A_RBV));
+	--A_SY1: calc(1 + var(--A_SP1) * var(--A_RBV));
+	--A_SY2: calc(1 - var(--A_SP2) * var(--A_RBV));
+	--A_SY3: calc(1 + var(--A_SP3) * var(--A_RBV));
+	--A_SY4: calc(1 - var(--A_SP4) * var(--A_RBV));
+	--A_SY5: calc(1 + var(--A_SP5) * var(--A_RBV));
+	--A_SY6: calc(1 - var(--A_SP6) * var(--A_RBV));
+	--A_SY7: calc(1 + var(--A_SP7) * var(--A_RBV));
+	--A_SY8: calc(1 - var(--A_SP8) * var(--A_RBV));
+	--A_SY9: calc(1 + var(--A_SP9) * var(--A_RBV));
+	--A_SY10: 1;
+}
+
+/* Horizontal */
+[:--A*="@bounce"]:not([:--A*="@bounce-"]),
+[:--A*="@BOUNCE"]:not([:--A*="@BOUNCE-"]) > *,
+[:--A*="@bounce-h"],
+[:--A*="@BOUNCE-h"] > *,
+[:--A*="@bounce-j"],
+[:--A*="@BOUNCE-j"] > * {
+	--A_RBH: 1;
+	--A_SX0: calc(1 - var(--A_SP0) * var(--A_RBH));
+	--A_SX1: calc(1 + var(--A_SP1) * var(--A_RBH));
+	--A_SX2: calc(1 - var(--A_SP2) * var(--A_RBH));
+	--A_SX3: calc(1 + var(--A_SP3) * var(--A_RBH));
+	--A_SX4: calc(1 - var(--A_SP4) * var(--A_RBH));
+	--A_SX5: calc(1 + var(--A_SP5) * var(--A_RBH));
+	--A_SX6: calc(1 - var(--A_SP6) * var(--A_RBH));
+	--A_SX7: calc(1 + var(--A_SP7) * var(--A_RBH));
+	--A_SX8: calc(1 - var(--A_SP8) * var(--A_RBH));
+	--A_SX9: calc(1 + var(--A_SP9) * var(--A_RBH));
+	--A_SX10: 1;
+}
+
+/* Invert */
+[:--A*="@bounce-h:r"],
+[:--A*="@BOUNCE-h:r"] > * {
+	--A_RBH: -1;
+}
+
+[:--A*="@bounce-v:r"],
+[:--A*="@BOUNCE-v:r"] > *,
+[:--A*="@bounce-j"],
+[:--A*="@BOUNCE-j"] > * {
+	--A_RBV: -1;
+}
+
+[:--A*="@bounce-j:r"],
+[:--A*="@BOUNCE-j:r"] > * {
+	--A_RBH: -1;
+	--A_RBV: 1;
+}
+
+/* X */
+[:--A*="@bounce-x"],
+[:--A*="@BOUNCE-x"] > * {
+	--A_RBX: 1;
+	--A_TX0: calc(100% * var(--A_SP0) * var(--A_RBX));
+	--A_TX1: calc(-100% * var(--A_SP1) * var(--A_RBX));
+	--A_TX2: calc(100% * var(--A_SP2) * var(--A_RBX));
+	--A_TX3: calc(-100% * var(--A_SP3) * var(--A_RBX));
+	--A_TX4: calc(100% * var(--A_SP4) * var(--A_RBX));
+	--A_TX5: calc(-100% * var(--A_SP5) * var(--A_RBX));
+	--A_TX6: calc(100% * var(--A_SP6) * var(--A_RBX));
+	--A_TX7: calc(-100% * var(--A_SP7) * var(--A_RBX));
+	--A_TX8: calc(100% * var(--A_SP8) * var(--A_RBX));
+	--A_TX9: calc(-100% * var(--A_SP9) * var(--A_RBX));
+	--A_TX10: calc(100% * var(--A_SP10) * var(--A_RBX));
+}
+
+/* Invert */
+[:--A*="@bounce-x:r"],
+[:--A*="@BOUNCE-x:r"] > *,
+[:--A*="@slide-x-in:r"][:--A*="@bounce"],
+[:--A*="@SLIDE-x-in:r"][:--A*="@BOUNCE"] > *,
+[:--A*="@slide-x-in-s:r"][:--A*="@bounce"],
+[:--A*="@SLIDE-x-in-s:r"][:--A*="@BOUNCE"] > * {
+	--A_RBX: -1;
+}
+
+/* Y */
+[:--A*="@bounce-y"],
+[:--A*="@BOUNCE-y"] > * {
+	--A_RBY: 1;
+	--A_TY0: calc(100% * var(--A_SP0) * var(--A_RBY));
+	--A_TY1: calc(-100% * var(--A_SP1) * var(--A_RBY));
+	--A_TY2: calc(100% * var(--A_SP2) * var(--A_RBY));
+	--A_TY3: calc(-100% * var(--A_SP3) * var(--A_RBY));
+	--A_TY4: calc(100% * var(--A_SP4) * var(--A_RBY));
+	--A_TY5: calc(-100% * var(--A_SP5) * var(--A_RBY));
+	--A_TY6: calc(100% * var(--A_SP6) * var(--A_RBY));
+	--A_TY7: calc(-100% * var(--A_SP7) * var(--A_RBY));
+	--A_TY8: calc(100% * var(--A_SP8) * var(--A_RBY));
+	--A_TY9: calc(-100% * var(--A_SP9) * var(--A_RBY));
+	--A_TY10: calc(100% * var(--A_SP10) * var(--A_RBY));
+}
+
+/* Invert */
+[:--A*="@bounce-y:r"],
+[:--A*="@BOUNCE-y:r"] > *,
+[:--A*="@slide-y-in:r"][:--A*="@bounce"],
+[:--A*="@SLIDE-y-in:r"][:--A*="@BOUNCE"] > *,
+[:--A*="@slide-y-in-s:r"][:--A*="@bounce"],
+[:--A*="@SLIDE-y-in-s:r"][:--A*="@BOUNCE"] > * {
+	--A_RBY: -1;
+}
+
+/* for multiple: "@slide + @bounce" */
+[:--A*="@slide"][:--A*="@bounce-y"],
+[:--A*="@SLIDE"][:--A*="@BOUNCE-y"] > * {
+	--A_TY0: calc(var(--A_CS) * var(--A_RB));
+}
+
+[:--A*="@slide"][:--A*="@bounce-x"],
+[:--A*="@SLIDE"][:--A*="@BOUNCE-x"] > * {
+	--A_TX0: calc(var(--A_CS) * var(--A_RB));
+}

@@ -1,0 +1,297 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	@rotate
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+[:--A*="@rotate"],
+[:--A*="@ROTATE"] > * {
+	--A_A2: steps2;
+	--A_TD: 1;
+	--A_E: var(--A_out-expo);
+	--A_CR: calc(15deg * var(--A_LD, -6) * var(--A_L) * var(--A_RR, -1));
+
+	/* for multiple "@x|y|z" in D */
+	--A_RX0: var(--D_RX0); --A_RY0: var(--D_RY0); --A_RZ0: var(--D_RZ0);
+	--A_RX1: var(--D_RX0); --A_RY1: var(--D_RY0); --A_RZ1: var(--D_RZ0);
+}
+
+/*-----------------------
+	@rotate(x|y|z)(:r)?
+-----------------------*/
+
+[:--A*="@rotate-x"]:not([:--A*="@rotate-x-"]),
+[:--A*="@ROTATE-x"]:not([:--A*="@ROTATE-x-"]) > *,
+[:--A*="@rotate-y"]:not([:--A*="@rotate-y-"]),
+[:--A*="@ROTATE-y"]:not([:--A*="@ROTATE-y-"]) > *,
+[:--A*="@rotate-z"]:not([:--A*="@rotate-z-"]),
+[:--A*="@ROTATE-z"]:not([:--A*="@ROTATE-z-"]) > * {
+	--A_TD: 1;
+	--A_E: linear;
+	--A_C: infinite;
+	--A_LD: -24;
+}
+
+[:--A*="@rotate-x"],
+[:--A*="@ROTATE-x"] > * {
+	--A_CRX: calc(var(--D_RX0, 0deg) + var(--A_CR));
+	--A_RX1: var(--A_CRX);
+}
+
+[:--A*="@rotate-y"],
+[:--A*="@ROTATE-y"] > * {
+	--A_CRY: calc(var(--D_RY0, 0deg) + var(--A_CR));
+	--A_RY1: var(--A_CRY);
+}
+
+[:--A*="@rotate-z"],
+[:--A*="@ROTATE-z"] > * {
+	--A_CRZ: calc(var(--D_RZ0, 0deg) + var(--A_CR));
+	--A_RZ1: var(--A_CRZ);
+}
+
+/* Invert */
+[:--A*="@rotate-x:r"],
+[:--A*="@ROTATE-x:r"] > *,
+[:--A*="@rotate-y:r"],
+[:--A*="@ROTATE-y:r"] > *,
+[:--A*="@rotate-z:r"],
+[:--A*="@ROTATE-z:r"] > * {
+	--A_TD: 6;
+	--A_E: linear;
+	--A_C: infinite;
+	--A_LD: -24;
+	--A_RR: 1;
+}
+
+/*-----------------------
+	@rotate-x-(in|out)(:r)?
+-----------------------*/
+
+/* In */
+[:--A*="@rotate-x-in"],
+[:--A*="@ROTATE-x-in"] > * {
+	--A_RX0: calc(var(--D_RX0, 90deg) * var(--A_RR, -1));
+	--A_RX1: inherit;
+}
+
+/* Out */
+[:--A*="@rotate-x-out"],
+[:--A*="@ROTATE-x-out"] > * {
+	--A_RX0: inherit;
+	--A_RX1: var(--A_CRX);
+}
+
+/* Invert */
+[:--A*="@rotate-x-in:r"],
+[:--A*="@ROTATE-x-in:r"] > *,
+[:--A*="@rotate-x-out:r"],
+[:--A*="@ROTATE-x-out:r"] > * {
+	--A_RR: 1;
+}
+
+/*-----------------------
+	@rotate-y-(in|out)(:r)?
+-----------------------*/
+
+/* In */
+[:--A*="@rotate-y-in"],
+[:--A*="@ROTATE-y-in"] > * {
+	--A_RY0: calc(var(--D_RY0, 90deg) * var(--A_RR, -1));
+	--A_RY1: inherit;
+}
+
+/* Out */
+[:--A*="@rotate-y-out"],
+[:--A*="@ROTATE-y-out"] > * {
+	--A_RY0: inherit;
+	--A_RY1: var(--A_CRY);
+}
+
+/* Invert */
+[:--A*="@rotate-y-in:r"],
+[:--A*="@ROTATE-y-in:r"] > *,
+[:--A*="@rotate-y-out:r"],
+[:--A*="@ROTATE-y-out:r"] > * {
+	--A_RR: 1;
+}
+
+/*-----------------------
+	@rotate-z-(in|out)(:r)?
+-----------------------*/
+
+/* In */
+[:--A*="@rotate-z-in"],
+[:--A*="@ROTATE-z-in"] > * {
+	--A_RZ0: calc(var(--D_RZ0, 90deg) * var(--A_RR, -1));
+	--A_RZ1: inherit;
+}
+
+/* Out */
+[:--A*="@rotate-z-out"],
+[:--A*="@ROTATE-z-out"] > * {
+	--A_RZ0: inherit;
+	--A_RZ1: var(--A_CRZ);
+}
+
+/* Invert */
+[:--A*="@rotate-z-in:r"],
+[:--A*="@ROTATE-z-in:r"] > *,
+[:--A*="@rotate-z-out:r"],
+[:--A*="@ROTATE-z-out:r"] > * {
+	--A_RR: 1;
+}
+
+/*-----------------------
+	Smash
+	@rotate-(x|y|z)-(in|out)-s(:r)?
+-----------------------*/
+
+[:--A*="@rotate-x-in-s"],
+[:--A*="@ROTATE-x-in-s"] > *,
+[:--A*="@rotate-y-in-s"],
+[:--A*="@ROTATE-y-in-s"] > *,
+[:--A*="@rotate-z-in-s"],
+[:--A*="@ROTATE-z-in-s"] > *,
+[:--A*="@rotate-x-out-s"],
+[:--A*="@ROTATE-x-out-s"] > *,
+[:--A*="@rotate-y-out-s"],
+[:--A*="@ROTATE-y-out-s"] > *,
+[:--A*="@rotate-z-out-s"],
+[:--A*="@ROTATE-z-out-s"] > * {
+	--A_A2: steps10;
+	--A_E: ease;
+	--A_RRS: -1;
+	--A_RRSD: 0deg;
+
+	/* Calc Spring */
+	--A_CRS0: calc(-120deg * var(--A_SP0) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS1: calc(120deg * var(--A_SP1) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS2: calc(-120deg * var(--A_SP2) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS3: calc(120deg * var(--A_SP3) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS4: calc(-120deg * var(--A_SP4) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS5: calc(120deg * var(--A_SP5) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS6: calc(-120deg * var(--A_SP6) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS7: calc(120deg * var(--A_SP7) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS8: calc(-120deg * var(--A_SP8) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS9: calc(120deg * var(--A_SP9) * var(--A_RRS) + var(--A_RRSD));
+	--A_CRS10: calc(0deg + var(--A_RRSD));
+
+	/* for multiple: "@[ x | y | z ]" in D */
+	--A_RX0: var(--D_RX0);--A_RY0: var(--D_RY0);--A_RZ0: var(--D_RZ0);
+	--A_RX1: var(--D_RX0);--A_RY1: var(--D_RY0);--A_RZ1: var(--D_RZ0);
+	--A_RX2: var(--D_RX0);--A_RY2: var(--D_RY0);--A_RZ2: var(--D_RZ0);
+	--A_RX3: var(--D_RX0);--A_RY3: var(--D_RY0);--A_RZ3: var(--D_RZ0);
+	--A_RX4: var(--D_RX0);--A_RY4: var(--D_RY0);--A_RZ4: var(--D_RZ0);
+	--A_RX5: var(--D_RX0);--A_RY5: var(--D_RY0);--A_RZ5: var(--D_RZ0);
+	--A_RX6: var(--D_RX0);--A_RY6: var(--D_RY0);--A_RZ6: var(--D_RZ0);
+	--A_RX7: var(--D_RX0);--A_RY7: var(--D_RY0);--A_RZ7: var(--D_RZ0);
+	--A_RX8: var(--D_RX0);--A_RY8: var(--D_RY0);--A_RZ8: var(--D_RZ0);
+	--A_RX9: var(--D_RX0);--A_RY9: var(--D_RY0);--A_RZ9: var(--D_RZ0);
+	--A_RX10: var(--D_RX0);--A_RY10: var(--D_RY0);--A_RZ10: var(--D_RZ0);
+}
+
+/*-----------------------
+	Smash
+	@rotate-x-(in|out)-s(:r)?
+-----------------------*/
+
+[:--A*="@rotate-x-in-s"],
+[:--A*="@ROTATE-x-in-s"] > *,
+[:--A*="@rotate-x-out-s"],
+[:--A*="@ROTATE-x-out-s"] > * {
+	--A_RX0: var(--A_CRS0);
+	--A_RX1: var(--A_CRS1);
+	--A_RX2: var(--A_CRS2);
+	--A_RX3: var(--A_CRS3);
+	--A_RX4: var(--A_CRS4);
+	--A_RX5: var(--A_CRS5);
+	--A_RX6: var(--A_CRS6);
+	--A_RX7: var(--A_CRS7);
+	--A_RX8: var(--A_CRS8);
+	--A_RX9: var(--A_CRS9);
+	--A_RX10: var(--A_CRS10);
+}
+
+[:--A*="@rotate-x-out-s"],
+[:--A*="@ROTATE-x-out-s"] > * {
+	--A_RRSD: 90deg;
+}
+
+/* Invert */
+[:--A*="@rotate-x-in-s:r"],
+[:--A*="@ROTATE-x-in-s:r"] > *,
+[:--A*="@rotate-x-out-s:r"],
+[:--A*="@ROTATE-x-out-s:r"] > * {
+	--A_RRS: 1;
+}
+
+/*-----------------------
+	Smash
+	@rotate-y-(in|out)-s(:r)?
+-----------------------*/
+
+[:--A*="@rotate-y-in-s"],
+[:--A*="@ROTATE-y-in-s"] > *,
+[:--A*="@rotate-y-out-s"],
+[:--A*="@ROTATE-y-out-s"] > * {
+	--A_RY0: var(--A_CRS0);
+	--A_RY1: var(--A_CRS1);
+	--A_RY2: var(--A_CRS2);
+	--A_RY3: var(--A_CRS3);
+	--A_RY4: var(--A_CRS4);
+	--A_RY5: var(--A_CRS5);
+	--A_RY6: var(--A_CRS6);
+	--A_RY7: var(--A_CRS7);
+	--A_RY8: var(--A_CRS8);
+	--A_RY9: var(--A_CRS9);
+	--A_RY10: var(--A_CRS10);
+}
+
+[:--A*="@rotate-y-out-s"],
+[:--A*="@ROTATE-y-out-s"] > * {
+	--A_RRSD: 90deg;
+}
+
+/* Invert */
+[:--A*="@rotate-y-in-s:r"],
+[:--A*="@ROTATE-y-in-s:r"] > *,
+[:--A*="@rotate-y-out-s:r"],
+[:--A*="@ROTATE-y-out-s:r"] > * {
+	--A_RRS: 1;
+}
+
+/*-----------------------
+	Smash
+	@rotate-z-(in|out)-s(:r)?
+-----------------------*/
+
+[:--A*="@rotate-z-in-s"],
+[:--A*="@ROTATE-z-in-s"] > *,
+[:--A*="@rotate-z-out-s"],
+[:--A*="@ROTATE-z-out-s"] > * {
+	--A_RZ0: var(--A_CRS0);
+	--A_RZ1: var(--A_CRS1);
+	--A_RZ2: var(--A_CRS2);
+	--A_RZ3: var(--A_CRS3);
+	--A_RZ4: var(--A_CRS4);
+	--A_RZ5: var(--A_CRS5);
+	--A_RZ6: var(--A_CRS6);
+	--A_RZ7: var(--A_CRS7);
+	--A_RZ8: var(--A_CRS8);
+	--A_RZ9: var(--A_CRS9);
+	--A_RZ10: var(--A_CRS10);
+}
+
+[:--A*="@rotate-z-out-s"],
+[:--A*="@ROTATE-z-out-s"] > * {
+	--A_RRSD: 90deg;
+}
+
+/* Invert */
+[:--A*="@rotate-z-in-s:r"],
+[:--A*="@ROTATE-z-in-s:r"] > *,
+[:--A*="@rotate-z-out-s:r"],
+[:--A*="@ROTATE-z-out-s:r"] > * {
+	--A_RRS: 1;
+}

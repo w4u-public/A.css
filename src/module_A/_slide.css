@@ -1,0 +1,284 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	@slide
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+[:--A*="@slide"],
+[:--A*="@SLIDE"] > * {
+	--A_A2: steps2;
+	--A_TD: .5;
+	--A_E: var(--A_circ);
+	--A_LS: calc(1 + calc(var(--A_L) * .3));
+	--A_CS: calc(100% * var(--A_LS));
+	--A_CS2: calc(100px * var(--A_LS));
+}
+
+/*-----------------------
+	@slide-(x|y|z)(:r)?
+-----------------------*/
+
+/* X */
+[:--A*="@slide-x"],
+[:--A*="@SLIDE-x"] > * {
+	--A_RSX: -1;
+	--A_CSX: calc(var(--A_CS) * var(--A_RSX));
+	--A_TX0: var(--A_CSX);
+	--A_TX1: calc(var(--A_CSX) * -1);
+}
+
+/* Invert */
+[:--A*="@slide-x:r"],
+[:--A*="@SLIDE-x:r"] {
+	--A_RSX: 1;
+}
+
+/* Y */
+[:--A*="@slide-y"],
+[:--A*="@SLIDE-y"] > * {
+	--A_RSY: -1;
+	--A_CSY: calc(var(--A_CS) * var(--A_RSY));
+	--A_TY0: var(--A_CSY);
+	--A_TY1: calc(var(--A_CSY) * -1);
+}
+
+/* Invert */
+[:--A*="@slide-y:r"],
+[:--A*="@SLIDE-y:r"] {
+	--A_RSY: 1;
+}
+
+/* Z */
+[:--A*="@slide-z"],
+[:--A*="@SLIDE-z"] > * {
+	--A_RSZ: -1;
+	--A_CSZ: calc(var(--A_CS2) * var(--A_RSZ));
+	--A_TZ0: var(--A_CSZ);
+	--A_TZ1: calc(var(--A_CSZ) * -1);
+}
+
+/* Invert */
+[:--A*="@slide-z:r"],
+[:--A*="@SLIDE-z:r"] {
+	--A_RSZ: 1;
+}
+
+/*-----------------------
+	@slide-(x|y|z)-in(:r)?
+-----------------------*/
+
+/* X */
+[:--A*="@slide-x-in"],
+[:--A*="@SLIDE-x-in"] > * {
+	--A_TX0: var(--A_CSX);
+	--A_TX1: inherit;
+}
+
+/* Invert */
+[:--A*="@slide-x-in:r"],
+[:--A*="@SLIDE-x-in:r"] > * {
+	--A_RSX: 1;
+}
+
+/* Y */
+[:--A*="@slide-y-in"],
+[:--A*="@SLIDE-y-in"] > * {
+	--A_TY0: var(--A_CSY);
+	--A_TY1: 0;
+}
+
+/* Invert */
+[:--A*="@slide-y-in:r"],
+[:--A*="@SLIDE-y-in:r"] > * {
+	--A_RSY: 1;
+}
+
+/* Z */
+[:--A*="@slide-z-in"],
+[:--A*="@SLIDE-z-in"] > * {
+	--A_TZ0: var(--A_CSZ);
+	--A_TZ1: 0;
+}
+
+/* Invert */
+[:--A*="@slide-z-in:r"],
+[:--A*="@SLIDE-z-in:r"] > * {
+	--A_RSZ: 1;
+}
+
+/*-----------------------
+	@slide-(x|y|z)-out(:r)?
+-----------------------*/
+
+/* X */
+[:--A*="@slide-x-out"],
+[:--A*="@SLIDE-x-out"] > * {
+	--A_TX0: inherit;
+	--A_TX1: var(--A_CSX);
+}
+
+/* Invert */
+[:--A*="@slide-x-out:r"],
+[:--A*="@SLIDE-x-out:r"] > * {
+	--A_RSX: 1;
+}
+
+/* Y */
+[:--A*="@slide-y-out"],
+[:--A*="@SLIDE-y-out"] > * {
+	--A_TY0: inherit;
+	--A_TY1: var(--A_CSY);
+}
+
+/* Invert */
+[:--A*="@slide-y-out:r"],
+[:--A*="@SLIDE-y-out:r"] > * {
+	--A_RSY: 1;
+}
+
+/* Z */
+[:--A*="@slide-z-out"],
+[:--A*="@SLIDE-z-out"] > * {
+	--A_TZ0: inherit;
+	--A_TZ1: var(--A_CSZ);
+}
+
+/* Invert */
+[:--A*="@slide-z-out:r"],
+[:--A*="@SLIDE-z-out:r"] > * {
+	--A_RSZ: 1;
+}
+
+/*-----------------------
+	Smash
+	@slide-(x|y|z)-in-s(:r)?
+-----------------------*/
+
+/* X */
+[:--A*="@slide-x-in-s"],
+[:--A*="@SLIDE-x-in-s"] > * {
+	--A_A2: steps4;
+	--A_TD: .5;
+	--A_O: right;
+	--A_TX1: calc(-15% * var(--A_RSX));
+	--A_SX0: 2;
+	--A_SX1: .8;
+}
+
+/* Invert */
+[:--A*="@slide-x-in-s:r"],
+[:--A*="@SLIDE-x-in-s:r"] > * {
+	--A_O: left;
+	--A_RSX: 1;
+}
+
+/* Y */
+[:--A*="@slide-y-in-s"],
+[:--A*="@SLIDE-y-in-s"] > * {
+	--A_A2: steps4;
+	--A_TD: .5;
+	--A_O: bottom;
+	--A_TY1: calc(-15% * var(--A_RSY));
+	--A_SY0: 2;
+	--A_SY1: .8;
+}
+
+/* Invert */
+[:--A*="@slide-y-in-s:r"],
+[:--A*="@SLIDE-y-in-s:r"] > * {
+	--A_O: top;
+	--A_RSY: 1;
+}
+
+/* Z */
+[:--A*="@slide-z-in-s"],
+[:--A*="@SLIDE-z-in-s"] > * {
+	--A_A2: steps4;
+	--A_TD: .5;
+	--A_TZ1: calc(-115px * var(--A_RSZ));
+	--A_SZ0: 2;
+	--A_SZ1: .8;
+}
+
+/* Invert */
+[:--A*="@slide-z-in-s:r"],
+[:--A*="@SLIDE-z-in-s:r"] > * {
+	--A_RSZ: 1;
+}
+
+/*-----------------------
+	Smash
+	@slide-(x|y|z)-out-s(:r)?
+-----------------------*/
+
+/* X */
+[:--A*="@slide-x-out-s"],
+[:--A*="@SLIDE-x-out-s"] > * {
+	--A_A2: steps4;
+	--A_TD: .5;
+	--A_O: left;
+	--A_TX1: calc(-40% * var(--A_RSX));
+	--A_TX2: var(--A_CSX);
+	--A_TX3: calc(var(--A_TX2) * 1.2);
+	--A_SX1: .8;
+}
+
+/* Invert */
+[:--A*="@slide-x-out-s:r"],
+[:--A*="@SLIDE-x-out-s:r"] > * {
+	--A_O: right;
+	--A_RSX: 1;
+}
+
+/* Y */
+[:--A*="@slide-y-out-s"],
+[:--A*="@SLIDE-y-out-s"] > * {
+	--A_A2: steps4;
+	--A_TD: .5;
+	--A_O: bottom;
+	--A_TY1: calc(-30% * var(--A_RSY));
+	--A_TY2: var(--A_CSY);
+	--A_TY3: calc(var(--A_TY2) * 1.2);
+	--A_SY1: .8;
+}
+
+/* Invert */
+[:--A*="@slide-y-out-s:r"],
+[:--A*="@SLIDE-y-out-s:r"] > * {
+	--A_O: top;
+	--A_RSY: 1;
+}
+
+/* Z */
+[:--A*="@slide-z-out-s"],
+[:--A*="@SLIDE-z-out-s"] > * {
+	--A_A2: steps4;
+	--A_TD: .5;
+	--A_TZ1: calc(120px * var(--A_RSZ));
+	--A_SX0: 1.2;
+	--A_SY0: 1.2;
+	--A_SX1: .8;
+	--A_SY1: .8;
+}
+
+/* Invert */
+[:--A*="@slide-z-in-s:r"],
+[:--A*="@SLIDE-z-in-s:r"] > * {
+	--A_RSZ: 1;
+}
+
+/* for multiple "@fade-out" */
+[:--A*="@fade-out"]:matches(
+	[:--A*="@slide-x-out-s"],
+	[:--A*="@slide-y-out-s"],
+	[:--A*="@slide-z-out-s"]),
+[:--A*="@FADE-out"]:matches(
+	[:--A*="@SLIDE-x-out-s"] > *,
+	[:--A*="@SLIDE-y-out-s"] > *,
+	[:--A*="@SLIDE-z-out-s"] > *
+	) {
+	--A_OP0: 1;
+	--A_OP1: 1;
+	--A_OP2: 0;
+	--A_OP3: 0;
+}
