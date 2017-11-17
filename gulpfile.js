@@ -3,8 +3,7 @@ var gulp = require('gulp'),
 	notify = require('gulp-notify'),
 	postcss = require('gulp-postcss'),
 	browserSync = require('browser-sync'),
-	rename = require('gulp-rename'),
-	cssnano = require('cssnano');
+	rename = require('gulp-rename');
 
 var plugins = [
 	postcssImport = require('postcss-import'),
@@ -24,7 +23,8 @@ var plugins = [
 
 var path = {
 	'src': 'src/',
-	'dist': 'dist/'
+	'dist': 'dist/',
+	'start': 'A.html'
 }
 
 //====================
@@ -32,9 +32,10 @@ var path = {
 //====================
 
 gulp.task('html', function() {
-	gulp.src(path.dist + '/**/*.html')
+	gulp.src(path.src + '/**/*.html')
 	.pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
-	.pipe(gulp.dest(path.dist + 'test'))
+	.pipe(gulp.dest(path.dist))
+	.pipe(browserSync.stream())
 });
 
 //====================
@@ -47,11 +48,6 @@ gulp.task('css', function(){
 		.pipe(postcss(plugins))
 		.pipe(gulp.dest(path.dist))
 		.pipe(browserSync.stream())
-		.pipe(gulp.dest('../css-initials/public/'))
-		.pipe(postcss([cssnano]))
-		.pipe(rename({
-			suffix: '.min' }))
-		.pipe(gulp.dest(path.dist))
 });
 
 //====================
@@ -77,7 +73,5 @@ gulp.task('reload', function(){
 
 gulp.task('default', ['browser-sync'], function(){
 	gulp.watch([path.src + '/**/*.css'], ['css']);
-	gulp.watch([path.dist + '/**/*.html'], ['reload']);
+	gulp.watch([path.src + '/**/*.html'], ['html']);
 });
-
-
