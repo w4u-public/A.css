@@ -4,17 +4,48 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="A.css">
 	<title>A.css</title>
+	<style>
+		.box {
+			color: #fff;
+			background-color: #333;
+		}
+	</style>
 </head>
 <body>
-	<h1>A</h1>
-	<div data-A="@ROTATE-z_ascend">
-		<div>A</div>
-		<div>A</div>
-		<div>A</div>
-		<div>A</div>
-		<div>A</div>
-		<div>A</div>
-		<div>A</div>
+	<h1>A.css</h1>
+	<ul>
+		<li><a href="http://animation.css-initials.com/" target="_blank">A.css - Reference</a></li>
+	</ul>
+
+	<h2>@fade</h2>
+	<div class="box" data-A="@fade_repeat">
+		A
 	</div>
+
+	<h2>@slide</h2>
+	<div class="box" data-A="@slide-x_repeat">
+		A
+	</div>
+
+	<h2>@rotate</h2>
+	<div class="box" data-A="@rotate-y_repeat">
+		A
+	</div>
+
+	<h2>@scale</h2>
+	<div class="box" data-A="@scale-y_repeat">
+		A
+	</div>
+
+	<h2>@bounce</h2>
+	<div class="box" data-A="@bounce_repeat">
+		A
+	</div>
+
+	<h2>Mixed</h2>
+	<div class="box" data-A="@slide-y-in:r_repeat_speed-down_alternate @fade">
+		A
+	</div>
+
 </body>
 </html>

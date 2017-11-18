@@ -2,24 +2,27 @@
 CSS Animation library.
 
 ## Usage
-    <head>
-      <link rel="stylesheet" href="A.css">
-    </head>
-~
+````html
+<head>
+  <link rel="stylesheet" href="A.css">
+</head>
+````
 
-    <div data-A="@slide-x-in">
-      <div>A</div>
-    </div>
-
+````html
+<div data-A="@slide-x-in">
+  <div>A</div>
+</div>
+````
 ### Mixed
-    <div data-A="@slide-x-in @slide-y-in">
-      <div>A</div>
-    </div>
-
+````html
+<div data-A="@slide-x-in @slide-y-in">
+  <div>A</div>
+</div>
+````
 ### Ex.
 ![Sample1](http://css-initials.com/s/A_ex1.svg)
 
-## Demo
+## Screenshot
 ![Sample1](http://css-initials.com/s/A_ex2.gif)
 
 ## Reference
