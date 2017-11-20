@@ -1,0 +1,215 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Keyframes
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@keyframes steps2fx {
+	0% {
+		opacity: var(--A_OP0, 1);
+	}
+	100% {
+		opacity: var(--A_OP1);
+	}
+}
+
+@keyframes steps2 {
+	0% {
+		/* Pending.
+		opacity: var(--A_OP0, 1);
+		*/
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX0, 0), var(--A_TY0, 0), var(--A_TZ0, 0))
+			scale3d(var(--A_SX0, 1), var(--A_SY0, 1), var(--A_SZ0, 1))
+			rotateX(var(--A_RX0, 0))
+			rotateY(var(--A_RY0, 0))
+			rotateZ(var(--A_RZ0, 0))
+		;
+	}
+	100% {
+		/* Pending.
+		opacity: var(--A_OP1);
+		*/
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX1, 0), var(--A_TY1, 0), var(--A_TZ1, 0))
+			scale3d(var(--A_SX1, 1), var(--A_SY1, 1), var(--A_SZ1, 1))
+			rotateX(var(--A_RX1, 0))
+			rotateY(var(--A_RY1, 0))
+			rotateZ(var(--A_RZ1, 0))
+		;
+		/* Pending.
+		filter:
+			blur(var(--A_FB1, 0))
+			contrast(var(--A_FC1, 100%))
+			brightness(var(--A_FBR1, 100%))
+			saturate(var(--A_FS1, 100%))
+		;
+		*/
+	}
+}
+
+@keyframes steps4 {
+	0% {
+		opacity: var(--A_OP0);
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX0, 0), var(--A_TY0, 0), var(--A_TZ0, 0))
+			scale3d(var(--A_SX0, 1), var(--A_SY0, 1), var(--A_SZ0, 1))
+			rotateX(var(--A_RX0, 0))
+			rotateY(var(--A_RY0, 0))
+			rotateZ(var(--A_RZ0, 0))
+		;
+	}
+	33% {
+		opacity: var(--A_OP1);
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX1, 0), var(--A_TY1, 0), var(--A_TZ1, 0))
+			scale3d(var(--A_SX1, 1), var(--A_SY1, 1), var(--A_SZ1, 1))
+			rotateX(var(--A_RX1, 0))
+			rotateY(var(--A_RY1, 0))
+			rotateZ(var(--A_RZ1, 0))
+		;
+	}
+	66% {
+		opacity: var(--A_OP2);
+		animation-timing-function: var(--A_out-expo);
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX2, 0), var(--A_TY2, 0), var(--A_TZ2, 0))
+			scale3d(var(--A_SX2, 1), var(--A_SY2, 1), var(--A_SZ2, 1))
+			rotateX(var(--A_RX2, 0))
+			rotateY(var(--A_RY2, 0))
+			rotateZ(var(--A_RZ2, 0))
+		;
+	}
+	100% {
+		opacity: var(--A_OP3);
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX3, 0), var(--A_TY3, 0), var(--A_TZ3, 0))
+			scale3d(var(--A_SX3, 1), var(--A_SY3, 1), var(--A_SZ3, 1))
+			rotateX(var(--A_RX3, 0))
+			rotateY(var(--A_RY3, 0))
+			rotateZ(var(--A_RZ3, 0))
+		;
+	}
+}
+
+@keyframes steps10 {
+	0% {
+		opacity: var(--A_OP0);
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX0, 0), var(--A_TY0, 0), var(--A_TZ0, 0))
+			scale3d(var(--A_SX0, 1), var(--A_SY0, 1), var(--A_SZ0, 1))
+			rotateX(var(--A_RX0, 0))
+			rotateY(var(--A_RY0, 0))
+			rotateZ(var(--A_RZ0, 0))
+		;
+	}
+	10% {
+		opacity: var(--A_OP1, 1);
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX1, 0), var(--A_TY1, 0), var(--A_TZ1, 0))
+			scale3d(var(--A_SX1, 1), var(--A_SY1, 1), var(--A_SZ1, 1))
+			rotateX(var(--A_RX1, 0))
+			rotateY(var(--A_RY1, 0))
+			rotateZ(var(--A_RZ1, 0))
+		;
+	}
+	20% {
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX2, 0), var(--A_TY2, 0), var(--A_TZ2, 0))
+			scale3d(var(--A_SX2, 1), var(--A_SY2, 1), var(--A_SZ2, 1))
+			rotateX(var(--A_RX2, 0))
+			rotateY(var(--A_RY2, 0))
+			rotateZ(var(--A_RZ2, 0))
+		;
+	}
+	30% {
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX3, 0), var(--A_TY3, 0), var(--A_TZ3, 0))
+			scale3d(var(--A_SX3, 1), var(--A_SY3, 1), var(--A_SZ3, 1))
+			rotateX(var(--A_RX3, 0))
+			rotateY(var(--A_RY3, 0))
+			rotateZ(var(--A_RZ3, 0))
+		;
+	}
+	40% {
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX4, 0), var(--A_TY4, 0), var(--A_TZ4, 0))
+			scale3d(var(--A_SX4, 1), var(--A_SY4, 1), var(--A_SZ4, 1))
+			rotateX(var(--A_RX4, 0))
+			rotateY(var(--A_RY4, 0))
+			rotateZ(var(--A_RZ4, 0))
+		;
+	}
+	50% {
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX5, 0), var(--A_TY5, 0), var(--A_TZ5, 0))
+			scale3d(var(--A_SX5, 1), var(--A_SY5, 1), var(--A_SZ5, 1))
+			rotateX(var(--A_RX5, 0))
+			rotateY(var(--A_RY5, 0))
+			rotateZ(var(--A_RZ5, 0))
+		;
+	}
+	60% {
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX6, 0), var(--A_TY6, 0), var(--A_TZ6, 0))
+			scale3d(var(--A_SX6, 1), var(--A_SY6, 1), var(--A_SZ6, 1))
+			rotateX(var(--A_RX6, 0))
+			rotateY(var(--A_RY6, 0))
+			rotateZ(var(--A_RZ6, 0))
+		;
+	}
+	70% {
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX7, 0), var(--A_TY7, 0), var(--A_TZ7, 0))
+			scale3d(var(--A_SX7, 1), var(--A_SY7, 1), var(--A_SZ7, 1))
+			rotateX(var(--A_RX7, 0))
+			rotateY(var(--A_RY7, 0))
+			rotateZ(var(--A_RZ7, 0))
+		;
+	}
+	80% {
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX8, 0), var(--A_TY8, 0), var(--A_TZ8, 0))
+			scale3d(var(--A_SX8, 1), var(--A_SY8, 1), var(--A_SZ8, 1))
+			rotateX(var(--A_RX8, 0))
+			rotateY(var(--A_RY8, 0))
+			rotateZ(var(--A_RZ8, 0))
+		;
+	}
+	90% {
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX9, 0), var(--A_TY9, 0), var(--A_TZ9, 0))
+			scale3d(var(--A_SX9, 1), var(--A_SY9, 1), var(--A_SZ9, 1))
+			rotateX(var(--A_RX9, 0))
+			rotateY(var(--A_RY9, 0))
+			rotateZ(var(--A_RZ9, 0))
+		;
+	}
+	100% {
+		opacity: var(--A_OP2, 1);
+		transform:
+			perspective(var(--A_P))
+			translate3d(var(--A_TX10, 0), var(--A_TY10, 0), var(--A_TZ10, 0))
+			scale3d(var(--A_SX10, 1), var(--A_SY10, 1), var(--A_SZ10, 1))
+			rotateX(var(--A_RX10, 0))
+			rotateY(var(--A_RY10, 0))
+			rotateZ(var(--A_RZ10, 0))
+		;
+	}
+}

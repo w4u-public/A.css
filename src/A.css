@@ -4,12 +4,12 @@
  * License: MIT
  */
 
-@import url('module_A/_init.css');
-@import url('module_A/_keyframes.css');
-@import url('module_A/_fade.css');
-@import url('module_A/_slide.css');
-@import url('module_A/_rotate.css');
-@import url('module_A/_scale.css');
-@import url('module_A/_bounce.css');
-@import url('module_A/_modifier.css');
-@import url('module_A/_modifier_timing-shift.css');
+@import url('module/_init.css');
+@import url('module/_keyframes.css');
+@import url('module/_fade.css');
+@import url('module/_slide.css');
+@import url('module/_rotate.css');
+@import url('module/_scale.css');
+@import url('module/_bounce.css');
+@import url('module/_modifier.css');
+@import url('module/_modifier_timing-shift.css');
