@@ -3,12 +3,12 @@ var gulp = require('gulp'),
 	notify = require('gulp-notify'),
 	postcss = require('gulp-postcss'),
 	browserSync = require('browser-sync'),
+	csswring = require('csswring'),
 	rename = require('gulp-rename');
 
 var plugins = [
 	postcssImport = require('postcss-import'),
 	postcssApply = require('postcss-apply'),
-	postcssSorting = require('postcss-sorting'),
 	postcssCustomSelectors = require('postcss-custom-selectors'),
 	postcssNesting = require('postcss-nesting'),
 	postcssNested = require('postcss-nested'),
@@ -24,19 +24,8 @@ var plugins = [
 var path = {
 	'src': 'src/',
 	'dist': 'dist/',
-	'start': 'A.html'
+	'start': 'test/index.html'
 }
-
-//====================
-// HTML
-//====================
-
-gulp.task('html', function() {
-	gulp.src(path.src + '/**/*.html')
-	.pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
-	.pipe(gulp.dest(path.dist))
-	.pipe(browserSync.stream())
-});
 
 //====================
 // CSS
@@ -48,6 +37,10 @@ gulp.task('css', function(){
 		.pipe(postcss(plugins))
 		.pipe(gulp.dest(path.dist))
 		.pipe(browserSync.stream())
+		.pipe(postcss([csswring]))
+		.pipe(rename({
+			suffix: '.min' }))
+		.pipe(gulp.dest(path.dist))
 });
 
 //====================
@@ -73,5 +66,5 @@ gulp.task('reload', function(){
 
 gulp.task('default', ['browser-sync'], function(){
 	gulp.watch([path.src + '/**/*.css'], ['css']);
-	gulp.watch([path.src + '/**/*.html'], ['html']);
+	gulp.watch([path.dist + '/**/*.html'], ['reload']);
 });
