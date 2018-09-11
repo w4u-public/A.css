@@ -1,19 +1,20 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	@fade
+	MODULE: @fade
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-[:--A*="@fade"],
-[:--A*="@FADE"] > * {
+[#{$attr}*="@fade"],
+[#{$attr}*="@FADE"] > * {
+	@extend %animationBase;
 	--A_A1: steps2fx;
 	--A_TD: .5;
 	--A_OP0: 0;
 	opacity: 0;
 }
 
-[:--A*="@fade-out"],
-[:--A*="@FADE-out"] > * {
+[#{$attr}*="@fade-out"],
+[#{$attr}*="@FADE-out"] > * {
 	--A_OP0: 1;
 	--A_OP1: 0;
 	--A_OP2: 0;

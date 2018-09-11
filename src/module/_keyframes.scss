@@ -15,9 +15,9 @@
 
 @keyframes steps2 {
 	0% {
-		/* Pending.
+
 		opacity: var(--A_OP0, 1);
-		*/
+		
 		transform:
 			perspective(var(--A_P))
 			translate3d(var(--A_TX0, 0), var(--A_TY0, 0), var(--A_TZ0, 0))
@@ -28,9 +28,9 @@
 		;
 	}
 	100% {
-		/* Pending.
+
 		opacity: var(--A_OP1);
-		*/
+		
 		transform:
 			perspective(var(--A_P))
 			translate3d(var(--A_TX1, 0), var(--A_TY1, 0), var(--A_TZ1, 0))
@@ -39,14 +39,14 @@
 			rotateY(var(--A_RY1, 0))
 			rotateZ(var(--A_RZ1, 0))
 		;
-		/* Pending.
+
 		filter:
 			blur(var(--A_FB1, 0))
 			contrast(var(--A_FC1, 100%))
 			brightness(var(--A_FBR1, 100%))
 			saturate(var(--A_FS1, 100%))
 		;
-		*/
+
 	}
 }
 

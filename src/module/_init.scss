@@ -1,0 +1,50 @@
+$attr: 'data-A';
+
+%animationBase {
+	transform-style: preserve-3d;
+	animation-name:
+		var(--A_A1, none),
+		var(--A_A2, none),
+		var(--A_A3, none);
+	animation-duration: calc(var(--A_T) * var(--A_TD, 1) * 1s);
+	animation-timing-function: var(--A_E);
+	animation-delay: var(--A_D);
+	animation-iteration-count: var(--A_C);
+	animation-direction: var(--A_DR);
+	animation-fill-mode: var(--A_AM, both);
+	transform-origin: var(--A_O);
+}
+
+%spring {
+	--A_SP0: calc(.3 * var(--A_L));
+	--A_SP1: calc(.25 * var(--A_L));
+	--A_SP2: calc(.15 * var(--A_L));
+	--A_SP3: calc(.13 * var(--A_L));
+	--A_SP4: calc(.08 * var(--A_L));
+	--A_SP5: calc(.06 * var(--A_L));
+	--A_SP6: calc(.04 * var(--A_L));
+	--A_SP7: calc(.03 * var(--A_L));
+	--A_SP8: calc(.02 * var(--A_L));
+	--A_SP9: calc(.01 * var(--A_L));
+}
+
+:root {
+	--A_T: 1.5;
+	--A_L: 1;
+	--A_P: 600px;
+
+	// Easing: Circ
+	--A_in-circ: cubic-bezier(.6, .04, .98, .335);
+	--A_out-circ: cubic-bezier(.075, .82, .165, 1);
+	--A_circ: cubic-bezier(.785, .135, .15, .86);
+
+	// Easing: Expo
+	--A_in-expo: cubic-bezier(.95, .05, .795, .035);
+	--A_out-expo: cubic-bezier(.19, 1, .22, 1);
+	--A_expo: cubic-bezier(1, 0, 0, 1);
+
+	//Easing: Back
+	--A_in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+	--A_out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	--A_back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

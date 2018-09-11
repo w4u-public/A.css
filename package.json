@@ -15,18 +15,20 @@
     "gulp": "^3.9.1",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
-    "postcss-apply": "^0.8.0",
-    "postcss-color-function": "^4.0.1",
-    "postcss-custom-media": "^6.0.0",
-    "postcss-custom-properties": "^6.2.0",
-    "postcss-custom-selectors": "^4.0.1",
-    "postcss-discard-empty": "^2.1.0",
-    "postcss-import": "^11.0.0",
-    "postcss-inline-comment": "^3.0.0",
-    "postcss-nested": "^2.1.2",
-    "postcss-nesting": "^4.2.1",
-    "postcss-selector-matches": "^3.0.1"
+    "gulp-sass": "^4.0.1"
+
+    // "gulp-postcss": "^7.0.0",
+    // "postcss-apply": "^0.8.0",
+    // "postcss-color-function": "^4.0.1",
+    // "postcss-custom-media": "^6.0.0",
+    // "postcss-custom-properties": "^6.2.0",
+    // "postcss-custom-selectors": "^4.0.1",
+    // "postcss-discard-empty": "^2.1.0",
+    // "postcss-import": "^11.0.0",
+    // "postcss-inline-comment": "^3.0.0",
+    // "postcss-nested": "^2.1.2",
+    // "postcss-nesting": "^4.2.1",
+    // "postcss-selector-matches": "^3.0.1"
   }
 }
