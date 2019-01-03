@@ -1,20 +1,14 @@
 var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	notify = require('gulp-notify'),
-	browserSync = require('browser-sync'),
-	rename = require('gulp-rename');
+	rename = require('gulp-rename'),
     sass = require('gulp-sass'),
-	postcss = require('gulp-postcss'),
-	csswring = require('csswring');
-
-var plugins = [
-	mqPacker = require('css-mqpacker')
-];
+	browserSync = require('browser-sync');
 
 var path = {
 	'src': 'src/',
 	'dist': 'dist/',
-	'start': 'test/index.html'
+	'start': 'index.html'
 }
 
 //====================
@@ -24,11 +18,10 @@ var path = {
 gulp.task('sass', function(){
 	return gulp.src(path.src + '/**/!(_)*.scss')
 		.pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
-		.pipe(postcss(plugins))
         .pipe(sass({outputStyle: 'expanded'})) // compressed | expanded
         .pipe(rename({extname: '.css'}))
 		.pipe(gulp.dest(path.dist))
-		.pipe(postcss([csswring]))
+		.pipe(sass({outputStyle: 'compressed'}))
 		.pipe(rename({suffix: '.min' }))
 		.pipe(gulp.dest(path.dist))
 });
