@@ -1,0 +1,20 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modifier: Delay
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+$isImported_modifier-delay: true;
+
+[#{$attr}*="_delay"] {
+	animation-delay: var(--ADL);
+}
+
+$steps: 6;
+$vol: .1;
+
+@for $i from 1 through $steps {
+	[#{$attr}*="_delay-#{$i}"] {
+		--ADL: #{$i * $vol}s;
+	}
+}

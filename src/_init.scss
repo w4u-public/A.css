@@ -1,0 +1,193 @@
+$attr: 'class';
+
+%animationBase {
+	animation:
+		var(--AN) // Name
+		calc(var(--AS, 1) * var(--AD, .5) * 1s) // Duration
+		var(--AE, ease) // Timing function
+		var(--AC, 1) // Count
+		var(--ADR, normal) // Alternate
+		var(--ANM, both) // Fill mode
+	;
+}
+
+[#{$attr}*="@"] {
+	--AL: 1;
+	--AOXY: 50% 50%;
+	--APP: perspective(var(--AP, 500px));
+
+	// Easing
+	--Acirc: cubic-bezier(.785, .135, .15, .86);
+	--Ain-circ: cubic-bezier(.6, .04, .98, .335);
+	--Aout-circ: cubic-bezier(.075, .82, .165, 1);
+	--Aexpo: cubic-bezier(1, 0, 0, 1);
+	--Ain-expo: cubic-bezier(.95, .05, .795, .035);
+	--Aout-expo: cubic-bezier(.19, 1, .22, 1);
+	--Aback: cubic-bezier(.68, -.55, .265, 1.55);
+	--Ain-back: cubic-bezier(.6, -.28, .735, .045);
+	--Aout-back: cubic-bezier(.175, .885, .32, 1.275);
+
+	// Spring
+	--ASP0: calc(.3 * var(--AL));
+	--ASP1: calc(.25 * var(--AL));
+	--ASP2: calc(.15 * var(--AL));
+	--ASP3: calc(.13 * var(--AL));
+	--ASP4: calc(.08 * var(--AL));
+	--ASP5: calc(.06 * var(--AL));
+	--ASP6: calc(.04 * var(--AL));
+	--ASP7: calc(.03 * var(--AL));
+	--ASP8: calc(.02 * var(--AL));
+	--ASP9: calc(.01 * var(--AL));
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Keyframes
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@keyframes steps2 {
+	0% {
+		opacity: var(--AOP0);
+		transform-origin: var(--AOXY) var(--AOZ0, 0);
+		transform:
+			var(--APP)
+			rotateZ(var(--ARNZ0, 0))
+			translate(var(--ATX0, 0), var(--ATY0, 0))
+			scale(var(--ASX0, 1), var(--ASY0, 1))
+			rotateX(var(--ARX0, 0))
+			rotateY(var(--ARY0, 0))
+			rotateZ(var(--ARZ0, 0))
+		;
+	}
+	100% {
+		opacity: var(--AOP1);
+		transform-origin: var(--AOXY) var(--AOZ10, 0);
+		transform:
+			var(--APP)
+			rotateZ(var(--ARNZ1, 0))
+			translate(var(--ATX1, 0), var(--ATY1, 0))
+			scale(var(--ASX1, 1), var(--ASY1, 1))
+			rotateX(var(--ARX1, 0))
+			rotateY(var(--ARY1, 0))
+			rotateZ(var(--ARZ1, 0))
+		;
+	}
+}
+
+@keyframes steps10 {
+	0% {
+		opacity: var(--AOP0);
+		transform-origin: var(--AOXY) var(--AOZ0, 0);
+		transform:
+			var(--APP)
+			translate(var(--ATX0, 0), var(--ATY0, 0))
+			scale(var(--ASX0, 1), var(--ASY0, 1))
+			rotateX(var(--ARX0, 0))
+			rotateY(var(--ARY0, 0))
+			rotateZ(var(--ARZ0, 0))
+		;
+	}
+	10% {
+		opacity: var(--AOP1);
+		transform:
+			var(--APP)
+			translate(var(--ATX1, 0), var(--ATY1, 0))
+			scale(var(--ASX1, 1), var(--ASY1, 1))
+			rotateX(var(--ARX1, 0))
+			rotateY(var(--ARY1, 0))
+			rotateZ(var(--ARZ1, 0))
+		;
+	}
+	20% {
+		transform:
+			var(--APP)
+			translate(var(--ATX2, 0), var(--ATY2, 0))
+			scale(var(--ASX2, 1), var(--ASY2, 1))
+			rotateX(var(--ARX2, 0))
+			rotateY(var(--ARY2, 0))
+			rotateZ(var(--ARZ2, 0))
+		;
+	}
+	30% {
+		transform:
+			var(--APP)
+			translate(var(--ATX3, 0), var(--ATY3, 0))
+			scale(var(--ASX3, 1), var(--ASY3, 1))
+			rotateX(var(--ARX3, 0))
+			rotateY(var(--ARY3, 0))
+			rotateZ(var(--ARZ3, 0))
+		;
+	}
+	40% {
+		transform:
+			var(--APP)
+			translate(var(--ATX4, 0), var(--ATY4, 0))
+			scale(var(--ASX4, 1), var(--ASY4, 1))
+			rotateX(var(--ARX4, 0))
+			rotateY(var(--ARY4, 0))
+			rotateZ(var(--ARZ4, 0))
+		;
+	}
+	50% {
+		transform:
+			var(--APP)
+			translate(var(--ATX5, 0), var(--ATY5, 0))
+			scale(var(--ASX5, 1), var(--ASY5, 1))
+			rotateX(var(--ARX5, 0))
+			rotateY(var(--ARY5, 0))
+			rotateZ(var(--ARZ5, 0))
+		;
+	}
+	60% {
+		transform:
+			var(--APP)
+			translate(var(--ATX6, 0), var(--ATY6, 0))
+			scale(var(--ASX6, 1), var(--ASY6, 1))
+			rotateX(var(--ARX6, 0))
+			rotateY(var(--ARY6, 0))
+			rotateZ(var(--ARZ6, 0))
+		;
+	}
+	70% {
+		transform:
+			var(--APP)
+			translate(var(--ATX7, 0), var(--ATY7, 0))
+			scale(var(--ASX7, 1), var(--ASY7, 1))
+			rotateX(var(--ARX7, 0))
+			rotateY(var(--ARY7, 0))
+			rotateZ(var(--ARZ7, 0))
+		;
+	}
+	80% {
+		transform:
+			var(--APP)
+			translate(var(--ATX8, 0), var(--ATY8, 0))
+			scale(var(--ASX8, 1), var(--ASY8, 1))
+			rotateX(var(--ARX8, 0))
+			rotateY(var(--ARY8, 0))
+			rotateZ(var(--ARZ8, 0))
+		;
+	}
+	90% {
+		transform:
+			var(--APP)
+			translate(var(--ATX9, 0), var(--ATY9, 0))
+			scale(var(--ASX9, 1), var(--ASY9, 1))
+			rotateX(var(--ARX9, 0))
+			rotateY(var(--ARY9, 0))
+			rotateZ(var(--ARZ9, 0))
+		;
+	}
+	100% {
+		transform-origin: var(--AOXY) var(--AOZ10, 0);
+		transform:
+			var(--APP)
+			translate(var(--ATX10, 0), var(--ATY10, 0))
+			scale(var(--ASX10, 1), var(--ASY10, 1))
+			rotateX(var(--ARX10, 0))
+			rotateY(var(--ARY10, 0))
+			rotateZ(var(--ARZ10, 0))
+		;
+	}
+}

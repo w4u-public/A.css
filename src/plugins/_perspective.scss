@@ -1,0 +1,104 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Perspective
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+$isImported_perspective: true;
+
+[#{$attr}*="@pr"] {
+	@extend %animationBase;
+	--AN: steps2;
+	--AP: calc(var(--Avpr, 500) * var(--Apvv, 1) * var(--Apru, 1px));
+	perspective: var(--AP);
+}
+
+/*-----------------------
+	In
+-----------------------*/
+
+[#{$attr}*="@pr-i"] {
+	--AOZ0: 50vw;
+}
+
+/* Invert */
+
+[#{$attr}*="@pr-in!"] {
+	--AOZ0: -50vw;
+}
+
+/*-----------------------
+	Out
+-----------------------*/
+
+[#{$attr}*="@pr-o"] {
+	--AOZ10: 50vw;
+}
+
+/* Invert */
+
+[#{$attr}*="@pr-out!"] {
+	--AOZ10: -50vw;
+}
+
+/*-----------------------
+	Unit
+-----------------------*/
+
+/* Vw */
+
+[#{$attr}*="@pr-vw"] {
+	--Avpr: 25;
+	--Apru: 1vw;
+}
+
+/* Vh */
+
+[#{$attr}*="@pr-vh"] {
+	--Avpr: 25;
+	--Apru: 1vh;
+}
+
+/*-----------------------
+	Velocity
+-----------------------*/
+
+[#{$attr}*="@pr-none"] {
+	--Apvv: 0;
+}
+
+/* Up */
+
+[#{$attr}*="@pr-up"] {
+	--Apvv: .8;
+}
+
+[#{$attr}*="@pr-up+"] {
+	--Apvv: .6;
+}
+
+[#{$attr}*="@pr-up++"] {
+	--Apvv: .4;
+}
+
+[#{$attr}*="@pr-up+++"] {
+	--Apvv: .2;
+}
+
+/* Down */
+
+[#{$attr}*="@pr-down"] {
+	--Apvv: 1.2;
+}
+
+[#{$attr}*="@pr-down+"] {
+	--Apvv: 1.4;
+}
+
+[#{$attr}*="@pr-down++"] {
+	--Apvv: 1.6;
+}
+
+[#{$attr}*="@pr-down+++"] {
+	--Apvv: 1.8;
+}

@@ -1,0 +1,72 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Slide
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+$isImported_slide: true;
+
+[#{$attr}*="@sl"] {
+	@extend %animationBase;
+	--AN: steps2;
+	--AD: .5;
+	--Avsl: calc(-100% * var(--AL));
+}
+
+/* X */
+
+[#{$attr}*="@sl-x"] {
+	--Avslx: calc(var(--Avsl) * var(--Arsx, 1));
+	--ATX0: var(--Avslx);
+	--ATX1: 0;
+}
+
+/* Invert */
+
+[#{$attr}*="@sl-x!"] {
+	--Arsx: -1;
+}
+
+/* Y */
+
+[#{$attr}*="@sl-y"] {
+	--Avsly: calc(var(--Avsl) * var(--Arsy, 1));
+	--ATY0: var(--Avsly);
+	--ATY1: 0;
+}
+
+/* Invert */
+
+[#{$attr}*="@sl-y!"] {
+	--Arsy: -1;
+}
+
+/*-----------------------
+	Out
+-----------------------*/
+
+/* X */
+
+[#{$attr}*="@sl-x-o"] {
+	--ATX0: 0;
+	--ATX1: var(--Avslx);
+}
+
+/* Invert */
+
+[#{$attr}*="@sl-x-out!"] {
+	--Arsx: -1;
+}
+
+/* Y */
+
+[#{$attr}*="@sl-y-o"] {
+	--ATY0: 0;
+	--ATY1: var(--Avsly);
+}
+
+/* Invert */
+
+[#{$attr}*="@sl-y-out!"] {
+	--Arsy: -1;
+}

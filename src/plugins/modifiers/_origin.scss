@@ -1,0 +1,43 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modifier: Transform origin
+
+	lt | t | rt
+	l  |   | r
+	lb | b | rb
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+$isImported_modifier-origin: true;
+
+[#{$attr}*="_origin-t"] {
+	--AOXY: 50% 0;
+}
+
+[#{$attr}*="_origin-r"] {
+	--AOXY: 100% 50%;
+}
+
+[#{$attr}*="_origin-rt"] {
+	--AOXY: 100% 0;
+}
+
+[#{$attr}*="_origin-b"] {
+	--AOXY: 50% 100%;
+}
+
+[#{$attr}*="_origin-rb"] {
+	--AOXY: 100% 100%;
+}
+
+[#{$attr}*="_origin-l"] {
+	--AOXY: 0 50%;
+}
+
+[#{$attr}*="_origin-lb"] {
+	--AOXY: 0 100%;
+}
+
+[#{$attr}*="_origin-lt"] {
+	--AOXY: 0 0;
+}

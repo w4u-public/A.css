@@ -1,11 +1,18 @@
 /*!
- * A.css - http://animation.css-initials.com/
- * Version: 0.8
+ * A.css - https://github.com/w4u-public/A.css
+ * Version: 1.0a
  * License: MIT
  */
-
-@import 'module/_init';
-@import 'module/_keyframes';
-@import 'module/_modifier';
-@import 'module/_fade';
-@import 'module/_slide';
+ 
+@import '_init';
+@import 'plugins/_fade';
+@import 'plugins/_slide';
+@import 'plugins/_rotate';
+@import 'plugins/_scale';
+@import 'plugins/_spiral';
+@import 'plugins/_viblate';
+@import 'plugins/_perspective';
+@import 'plugins/_bounce';
+@import 'plugins/_shake';
+@import 'plugins/_flick';
+@import 'plugins/_modifier';

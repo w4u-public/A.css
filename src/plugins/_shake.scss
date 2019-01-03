@@ -1,0 +1,74 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Shake
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+$isImported_shake: true;
+
+[#{$attr}*="@sh"] {
+	@extend %animationBase;
+	--AN: steps10;
+	--AD: 1;
+}
+
+/* --------------------
+	X
+-------------------- */
+
+[#{$attr}*="@sh-x"] {
+	--Arshx: 1;
+	--ATX0: calc(100% * var(--ASP0) * var(--Arshx));
+	--ATX1: calc(-100% * var(--ASP1) * var(--Arshx));
+	--ATX2: calc(100% * var(--ASP2) * var(--Arshx));
+	--ATX3: calc(-100% * var(--ASP3) * var(--Arshx));
+	--ATX4: calc(100% * var(--ASP4) * var(--Arshx));
+	--ATX5: calc(-100% * var(--ASP5) * var(--Arshx));
+	--ATX6: calc(100% * var(--ASP6) * var(--Arshx));
+	--ATX7: calc(-100% * var(--ASP7) * var(--Arshx));
+	--ATX8: calc(100% * var(--ASP8) * var(--Arshx));
+	--ATX9: calc(-100% * var(--ASP9) * var(--Arshx));
+}
+
+/* Invert */
+
+[#{$attr}*="@sh-x!"] {
+	--Arshx: -1;
+}
+
+/* --------------------
+	Y
+-------------------- */
+
+[#{$attr}*="@sh-y"] {
+	--Arshy: 1;
+	--ATY0: calc(100% * var(--ASP0) * var(--Arshy));
+	--ATY1: calc(-100% * var(--ASP1) * var(--Arshy));
+	--ATY2: calc(100% * var(--ASP2) * var(--Arshy));
+	--ATY3: calc(-100% * var(--ASP3) * var(--Arshy));
+	--ATY4: calc(100% * var(--ASP4) * var(--Arshy));
+	--ATY5: calc(-100% * var(--ASP5) * var(--Arshy));
+	--ATY6: calc(100% * var(--ASP6) * var(--Arshy));
+	--ATY7: calc(-100% * var(--ASP7) * var(--Arshy));
+	--ATY8: calc(100% * var(--ASP8) * var(--Arshy));
+	--ATY9: calc(-100% * var(--ASP9) * var(--Arshy));
+}
+
+/* Invert */
+
+[#{$attr}*="@sh-y!"] {
+	--Arshy: -1;
+}
+
+/* --------------------
+	Multiple
+-------------------- */
+
+@if variable-exists(isImported_slide) {
+
+	[#{$attr}*="@sh"][#{$attr}*="@sl"] {
+		--ATX0: calc(var(--Avslx) * 2);
+		--ATY0: calc(var(--Avsly) * 2);
+	}
+
+}

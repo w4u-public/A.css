@@ -1,0 +1,47 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modifier: Speed (Duration)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+$isImported_modifier-speed: true;
+
+[#{$attr}*="_speed"] {
+	--AS: var(--Als);
+}
+
+/* Up */
+
+[#{$attr}*="_speed-up"] {
+	--Als: .8;
+}
+
+[#{$attr}*="_speed-up+"] {
+	--Als: .6;
+}
+
+[#{$attr}*="_speed-up++"] {
+	--Als: .4;
+}
+
+[#{$attr}*="_speed-up+++"] {
+	--Als: .2;
+}
+
+/* Down */
+
+[#{$attr}*="_speed-down"] {
+	--Als: 2;
+}
+
+[#{$attr}*="_speed-down+"] {
+	--Als: 4;
+}
+
+[#{$attr}*="_speed-down++"] {
+	--Als: 6;
+}
+
+[#{$attr}*="_speed-down+++"] {
+	--Als: 8;
+}

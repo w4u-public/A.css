@@ -1,0 +1,21 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modifier: Direction
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+$isImported_modifier-direction: true;
+
+[#{$attr}*="_alt"] {
+	--ADR: alternate;
+	--AC: 2;
+}
+
+[#{$attr}*="_alt-rev"] {
+	--ADR: alternate-reverse;
+	--AC: 2;
+}
+
+[#{$attr}*="_rev"] {
+	--ADR: reverse;
+}
