@@ -1,0 +1,195 @@
+{
+	"keys": {
+		"Fade": [
+			"@fd",
+			"@fd-out"
+		],
+		"Slide": [
+			"@sl-x",
+			"@sl-x!",
+			"@sl-x-out",
+			"@sl-x-out!",
+			"@sl-y",
+			"@sl-y!",
+			"@sl-y-out",
+			"@sl-y-out!"
+		],
+		"Rotate": [
+			"@rt-x",
+			"@rt-x!",
+			"@rt-x-in",
+			"@rt-x-in!",
+			"@rt-x-out",
+			"@rt-x-out!",
+			"@rt-y",
+			"@rt-y!",
+			"@rt-y-in",
+			"@rt-y-in!",
+			"@rt-y-out",
+			"@rt-y-out!",
+			"@rt-z",
+			"@rt-z!",
+			"@rt-z-in",
+			"@rt-z-in!",
+			"@rt-z-out",
+			"@rt-z-out!"
+		],
+		"Scale": [
+			"@sc-in",
+			"@sc-in!",
+			"@sc-out",
+			"@sc-out!",
+			"@sc-x-in",
+			"@sc-x-in!",
+			"@sc-x-out",
+			"@sc-x-out!",
+			"@sc-y-in",
+			"@sc-y-in!",
+			"@sc-y-out",
+			"@sc-y-out!"
+		],
+		"Flick": [
+			"@fl-x-in",
+			"@fl-x-in!",
+			"@fl-x-out",
+			"@fl-x-out!",
+			"@fl-y-in",
+			"@fl-y-in!",
+			"@fl-y-out",
+			"@fl-y-out!",
+			"@fl-z-in",
+			"@fl-z-in!",
+			"@fl-z-out",
+			"@fl-z-out!"
+		],
+		"Bounce": [
+			"@bn",
+			"@bn!",
+			"@bn-x",
+			"@bn-x!",
+			"@bn-y",
+			"@bn-y!"
+		],
+		"Shake": [
+			"@sh-x",
+			"@sh-x!",
+			"@sh-y",
+			"@sh-y!"
+		],
+		"Spiral": [
+			"@sp-in",
+			"@sp-in!",
+			"@sp-out",
+			"@sp-out!"
+		],
+		"Viblate": [
+			"@vb"
+		],
+		"Perspective": [
+			"@pr-in",
+			"@pr-in!",
+			"@pr-out",
+			"@pr-out!",
+			"@pr-vw",
+			"@pr-vh",
+			"@pr-none",
+			"@pr-up",
+			"@pr-up+",
+			"@pr-up++",
+			"@pr-up+++",
+			"@pr-down",
+			"@pr-down+",
+			"@pr-down++",
+			"@pr-down+++"
+		]
+	},
+	"modifiers": {
+		"Easing": [
+			"_ease",
+			"_ease-back",
+			"_ease-in-back",
+			"_ease-out-back",
+			"_ease-expo",
+			"_ease-in-expo",
+			"_ease-out-expo",
+			"_ease-circ",
+			"_ease-in-circ",
+			"_ease-out-circ",
+			"_ease-in-out",
+			"_ease-in",
+			"_ease-out",
+			"_ease-linear"
+		],
+		"Repeat": [
+			"_repeat",
+			"_repeat-2",
+			"_repeat-3"
+		],
+		"Speed": [
+			"_speed-up",
+			"_speed-up+",
+			"_speed-up++",
+			"_speed-up+++",
+			"_speed-down",
+			"_speed-down+",
+			"_speed-down++",
+			"_speed-down+++"
+		],
+		"Level": [
+			"_lv-up",
+			"_lv-up+",
+			"_lv-up++",
+			"_lv-up+++",
+			"_lv-down",
+			"_lv-down+",
+			"_lv-down++",
+			"_lv-down+++"
+		],
+		"Transform origin": [
+			"_origin-t",
+			"_origin-rt",
+			"_origin-r",
+			"_origin-rb",
+			"_origin-b",
+			"_origin-lb",
+			"_origin-l",
+			"_origin-lt"
+		],
+		"Direction": [
+			"_alt",
+			"_alt-reverse",
+			"_reverse"
+		],
+		"Delay (.1s step)": [
+			"_delay-1",
+			"_delay-2",
+			"_delay-3",
+			"_delay-4",
+			"_delay-5",
+			"_delay-6"
+		],
+		"Children": [
+			"_ascend",
+			"_descend",
+			"_odd",
+			"_even",
+			"_each",
+			"_ascend-up",
+			"_ascend-up+",
+			"_ascend-up++",
+			"_ascend-up+++",
+			"_ascend-down",
+			"_ascend-down+",
+			"_ascend-down++",
+			"_ascend-down+++",
+			"_descend-up",
+			"_descend-up+",
+			"_descend-up++",
+			"_descend-up+++",
+			"_descend-down",
+			"_descend-down+",
+			"_descend-down++",
+			"_descend-down+++"
+		]
+	}
+}
