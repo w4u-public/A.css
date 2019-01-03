@@ -1,35 +1,35 @@
 /*!
- * A.css - http://animation.css-initials.com/
- * Version: 0.8
+ * A.css - https://github.com/w4u-public/A.css
+ * Version: 1.0a
  * License: MIT
  */
-[data-A*="@fade"],
-[data-A*="@FADE"] > *, [data-A*="@slide"],
-[data-A*="@SLIDE"] > * {
-  transform-style: preserve-3d;
-  animation-name: var(--A_A1, none), var(--A_A2, none), var(--A_A3, none);
-  animation-duration: calc(var(--A_T) * var(--A_TD, 1) * 1s);
-  animation-timing-function: var(--A_E);
-  animation-delay: var(--A_D);
-  animation-iteration-count: var(--A_C);
-  animation-direction: var(--A_DR);
-  animation-fill-mode: var(--A_AM, both);
-  transform-origin: var(--A_O);
+[class*="@fd"], [class*="@sl"], [class*="@rt"], [class*="@sc"], [class*="@sp"], [class*="@vb"], [class*="@pr"], [class*="@bn"], [class*="@sh"], [class*="fl"] {
+  animation: var(--AN) calc(var(--AS, 1) * var(--AD, .5) * 1s) var(--AE, ease) var(--AC, 1) var(--ADR, normal) var(--ANM, both);
 }
 
-:root {
-  --A_T: 1.5;
-  --A_L: 1;
-  --A_P: 600px;
-  --A_in-circ: cubic-bezier(.6, .04, .98, .335);
-  --A_out-circ: cubic-bezier(.075, .82, .165, 1);
-  --A_circ: cubic-bezier(.785, .135, .15, .86);
-  --A_in-expo: cubic-bezier(.95, .05, .795, .035);
-  --A_out-expo: cubic-bezier(.19, 1, .22, 1);
-  --A_expo: cubic-bezier(1, 0, 0, 1);
-  --A_in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-  --A_out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --A_back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+[class*="@"] {
+  --AL: 1;
+  --AOXY: 50% 50%;
+  --APP: perspective(var(--AP, 500px));
+  --Acirc: cubic-bezier(.785, .135, .15, .86);
+  --Ain-circ: cubic-bezier(.6, .04, .98, .335);
+  --Aout-circ: cubic-bezier(.075, .82, .165, 1);
+  --Aexpo: cubic-bezier(1, 0, 0, 1);
+  --Ain-expo: cubic-bezier(.95, .05, .795, .035);
+  --Aout-expo: cubic-bezier(.19, 1, .22, 1);
+  --Aback: cubic-bezier(.68, -.55, .265, 1.55);
+  --Ain-back: cubic-bezier(.6, -.28, .735, .045);
+  --Aout-back: cubic-bezier(.175, .885, .32, 1.275);
+  --ASP0: calc(.3 * var(--AL));
+  --ASP1: calc(.25 * var(--AL));
+  --ASP2: calc(.15 * var(--AL));
+  --ASP3: calc(.13 * var(--AL));
+  --ASP4: calc(.08 * var(--AL));
+  --ASP5: calc(.06 * var(--AL));
+  --ASP6: calc(.04 * var(--AL));
+  --ASP7: calc(.03 * var(--AL));
+  --ASP8: calc(.02 * var(--AL));
+  --ASP9: calc(.01 * var(--AL));
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,966 +37,1133 @@
 	Keyframes
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@keyframes steps2fx {
-  0% {
-    opacity: var(--A_OP0, 1);
-  }
-  100% {
-    opacity: var(--A_OP1);
-  }
-}
-
 @keyframes steps2 {
   0% {
-    opacity: var(--A_OP0, 1);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX0, 0), var(--A_TY0, 0), var(--A_TZ0, 0)) scale3d(var(--A_SX0, 1), var(--A_SY0, 1), var(--A_SZ0, 1)) rotateX(var(--A_RX0, 0)) rotateY(var(--A_RY0, 0)) rotateZ(var(--A_RZ0, 0));
+    opacity: var(--AOP0);
+    transform-origin: var(--AOXY) var(--AOZ0, 0);
+    transform: var(--APP) rotateZ(var(--ARNZ0, 0)) translate(var(--ATX0, 0), var(--ATY0, 0)) scale(var(--ASX0, 1), var(--ASY0, 1)) rotateX(var(--ARX0, 0)) rotateY(var(--ARY0, 0)) rotateZ(var(--ARZ0, 0));
   }
   100% {
-    opacity: var(--A_OP1);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX1, 0), var(--A_TY1, 0), var(--A_TZ1, 0)) scale3d(var(--A_SX1, 1), var(--A_SY1, 1), var(--A_SZ1, 1)) rotateX(var(--A_RX1, 0)) rotateY(var(--A_RY1, 0)) rotateZ(var(--A_RZ1, 0));
-    filter: blur(var(--A_FB1, 0)) contrast(var(--A_FC1, 100%)) brightness(var(--A_FBR1, 100%)) saturate(var(--A_FS1, 100%));
-  }
-}
-
-@keyframes steps4 {
-  0% {
-    opacity: var(--A_OP0);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX0, 0), var(--A_TY0, 0), var(--A_TZ0, 0)) scale3d(var(--A_SX0, 1), var(--A_SY0, 1), var(--A_SZ0, 1)) rotateX(var(--A_RX0, 0)) rotateY(var(--A_RY0, 0)) rotateZ(var(--A_RZ0, 0));
-  }
-  33% {
-    opacity: var(--A_OP1);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX1, 0), var(--A_TY1, 0), var(--A_TZ1, 0)) scale3d(var(--A_SX1, 1), var(--A_SY1, 1), var(--A_SZ1, 1)) rotateX(var(--A_RX1, 0)) rotateY(var(--A_RY1, 0)) rotateZ(var(--A_RZ1, 0));
-  }
-  66% {
-    opacity: var(--A_OP2);
-    animation-timing-function: var(--A_out-expo);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX2, 0), var(--A_TY2, 0), var(--A_TZ2, 0)) scale3d(var(--A_SX2, 1), var(--A_SY2, 1), var(--A_SZ2, 1)) rotateX(var(--A_RX2, 0)) rotateY(var(--A_RY2, 0)) rotateZ(var(--A_RZ2, 0));
-  }
-  100% {
-    opacity: var(--A_OP3);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX3, 0), var(--A_TY3, 0), var(--A_TZ3, 0)) scale3d(var(--A_SX3, 1), var(--A_SY3, 1), var(--A_SZ3, 1)) rotateX(var(--A_RX3, 0)) rotateY(var(--A_RY3, 0)) rotateZ(var(--A_RZ3, 0));
+    opacity: var(--AOP1);
+    transform-origin: var(--AOXY) var(--AOZ10, 0);
+    transform: var(--APP) rotateZ(var(--ARNZ1, 0)) translate(var(--ATX1, 0), var(--ATY1, 0)) scale(var(--ASX1, 1), var(--ASY1, 1)) rotateX(var(--ARX1, 0)) rotateY(var(--ARY1, 0)) rotateZ(var(--ARZ1, 0));
   }
 }
 
 @keyframes steps10 {
   0% {
-    opacity: var(--A_OP0);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX0, 0), var(--A_TY0, 0), var(--A_TZ0, 0)) scale3d(var(--A_SX0, 1), var(--A_SY0, 1), var(--A_SZ0, 1)) rotateX(var(--A_RX0, 0)) rotateY(var(--A_RY0, 0)) rotateZ(var(--A_RZ0, 0));
+    opacity: var(--AOP0);
+    transform-origin: var(--AOXY) var(--AOZ0, 0);
+    transform: var(--APP) translate(var(--ATX0, 0), var(--ATY0, 0)) scale(var(--ASX0, 1), var(--ASY0, 1)) rotateX(var(--ARX0, 0)) rotateY(var(--ARY0, 0)) rotateZ(var(--ARZ0, 0));
   }
   10% {
-    opacity: var(--A_OP1, 1);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX1, 0), var(--A_TY1, 0), var(--A_TZ1, 0)) scale3d(var(--A_SX1, 1), var(--A_SY1, 1), var(--A_SZ1, 1)) rotateX(var(--A_RX1, 0)) rotateY(var(--A_RY1, 0)) rotateZ(var(--A_RZ1, 0));
+    opacity: var(--AOP1);
+    transform: var(--APP) translate(var(--ATX1, 0), var(--ATY1, 0)) scale(var(--ASX1, 1), var(--ASY1, 1)) rotateX(var(--ARX1, 0)) rotateY(var(--ARY1, 0)) rotateZ(var(--ARZ1, 0));
   }
   20% {
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX2, 0), var(--A_TY2, 0), var(--A_TZ2, 0)) scale3d(var(--A_SX2, 1), var(--A_SY2, 1), var(--A_SZ2, 1)) rotateX(var(--A_RX2, 0)) rotateY(var(--A_RY2, 0)) rotateZ(var(--A_RZ2, 0));
+    transform: var(--APP) translate(var(--ATX2, 0), var(--ATY2, 0)) scale(var(--ASX2, 1), var(--ASY2, 1)) rotateX(var(--ARX2, 0)) rotateY(var(--ARY2, 0)) rotateZ(var(--ARZ2, 0));
   }
   30% {
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX3, 0), var(--A_TY3, 0), var(--A_TZ3, 0)) scale3d(var(--A_SX3, 1), var(--A_SY3, 1), var(--A_SZ3, 1)) rotateX(var(--A_RX3, 0)) rotateY(var(--A_RY3, 0)) rotateZ(var(--A_RZ3, 0));
+    transform: var(--APP) translate(var(--ATX3, 0), var(--ATY3, 0)) scale(var(--ASX3, 1), var(--ASY3, 1)) rotateX(var(--ARX3, 0)) rotateY(var(--ARY3, 0)) rotateZ(var(--ARZ3, 0));
   }
   40% {
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX4, 0), var(--A_TY4, 0), var(--A_TZ4, 0)) scale3d(var(--A_SX4, 1), var(--A_SY4, 1), var(--A_SZ4, 1)) rotateX(var(--A_RX4, 0)) rotateY(var(--A_RY4, 0)) rotateZ(var(--A_RZ4, 0));
+    transform: var(--APP) translate(var(--ATX4, 0), var(--ATY4, 0)) scale(var(--ASX4, 1), var(--ASY4, 1)) rotateX(var(--ARX4, 0)) rotateY(var(--ARY4, 0)) rotateZ(var(--ARZ4, 0));
   }
   50% {
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX5, 0), var(--A_TY5, 0), var(--A_TZ5, 0)) scale3d(var(--A_SX5, 1), var(--A_SY5, 1), var(--A_SZ5, 1)) rotateX(var(--A_RX5, 0)) rotateY(var(--A_RY5, 0)) rotateZ(var(--A_RZ5, 0));
+    transform: var(--APP) translate(var(--ATX5, 0), var(--ATY5, 0)) scale(var(--ASX5, 1), var(--ASY5, 1)) rotateX(var(--ARX5, 0)) rotateY(var(--ARY5, 0)) rotateZ(var(--ARZ5, 0));
   }
   60% {
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX6, 0), var(--A_TY6, 0), var(--A_TZ6, 0)) scale3d(var(--A_SX6, 1), var(--A_SY6, 1), var(--A_SZ6, 1)) rotateX(var(--A_RX6, 0)) rotateY(var(--A_RY6, 0)) rotateZ(var(--A_RZ6, 0));
+    transform: var(--APP) translate(var(--ATX6, 0), var(--ATY6, 0)) scale(var(--ASX6, 1), var(--ASY6, 1)) rotateX(var(--ARX6, 0)) rotateY(var(--ARY6, 0)) rotateZ(var(--ARZ6, 0));
   }
   70% {
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX7, 0), var(--A_TY7, 0), var(--A_TZ7, 0)) scale3d(var(--A_SX7, 1), var(--A_SY7, 1), var(--A_SZ7, 1)) rotateX(var(--A_RX7, 0)) rotateY(var(--A_RY7, 0)) rotateZ(var(--A_RZ7, 0));
+    transform: var(--APP) translate(var(--ATX7, 0), var(--ATY7, 0)) scale(var(--ASX7, 1), var(--ASY7, 1)) rotateX(var(--ARX7, 0)) rotateY(var(--ARY7, 0)) rotateZ(var(--ARZ7, 0));
   }
   80% {
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX8, 0), var(--A_TY8, 0), var(--A_TZ8, 0)) scale3d(var(--A_SX8, 1), var(--A_SY8, 1), var(--A_SZ8, 1)) rotateX(var(--A_RX8, 0)) rotateY(var(--A_RY8, 0)) rotateZ(var(--A_RZ8, 0));
+    transform: var(--APP) translate(var(--ATX8, 0), var(--ATY8, 0)) scale(var(--ASX8, 1), var(--ASY8, 1)) rotateX(var(--ARX8, 0)) rotateY(var(--ARY8, 0)) rotateZ(var(--ARZ8, 0));
   }
   90% {
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX9, 0), var(--A_TY9, 0), var(--A_TZ9, 0)) scale3d(var(--A_SX9, 1), var(--A_SY9, 1), var(--A_SZ9, 1)) rotateX(var(--A_RX9, 0)) rotateY(var(--A_RY9, 0)) rotateZ(var(--A_RZ9, 0));
+    transform: var(--APP) translate(var(--ATX9, 0), var(--ATY9, 0)) scale(var(--ASX9, 1), var(--ASY9, 1)) rotateX(var(--ARX9, 0)) rotateY(var(--ARY9, 0)) rotateZ(var(--ARZ9, 0));
   }
   100% {
-    opacity: var(--A_OP2, 1);
-    transform: perspective(var(--A_P)) translate3d(var(--A_TX10, 0), var(--A_TY10, 0), var(--A_TZ10, 0)) scale3d(var(--A_SX10, 1), var(--A_SY10, 1), var(--A_SZ10, 1)) rotateX(var(--A_RX10, 0)) rotateY(var(--A_RY10, 0)) rotateZ(var(--A_RZ10, 0));
+    transform-origin: var(--AOXY) var(--AOZ10, 0);
+    transform: var(--APP) translate(var(--ATX10, 0), var(--ATY10, 0)) scale(var(--ASX10, 1), var(--ASY10, 1)) rotateX(var(--ARX10, 0)) rotateY(var(--ARY10, 0)) rotateZ(var(--ARZ10, 0));
   }
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	Modifier
+	KEY: Fade
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@fd"] {
+  --AN: steps2;
+  --AOP0: 0;
+  --AOP1: 1;
+}
+
+[class*="@fd-o"] {
+  --AOP0: 1;
+  --AOP1: 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Slide
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@sl"] {
+  --AN: steps2;
+  --AD: .5;
+  --Avsl: calc(-100% * var(--AL));
+}
+
+/* X */
+[class*="@sl-x"] {
+  --Avslx: calc(var(--Avsl) * var(--Arsx, 1));
+  --ATX0: var(--Avslx);
+  --ATX1: 0;
+}
+
+/* Invert */
+[class*="@sl-x!"] {
+  --Arsx: -1;
+}
+
+/* Y */
+[class*="@sl-y"] {
+  --Avsly: calc(var(--Avsl) * var(--Arsy, 1));
+  --ATY0: var(--Avsly);
+  --ATY1: 0;
+}
+
+/* Invert */
+[class*="@sl-y!"] {
+  --Arsy: -1;
+}
+
 /*-----------------------
-	Repeat
+	Out
 -----------------------*/
-[data-A*="_repeat"],
-[data-A*="@ROTATE-"][data-A*="_repeat"] > * {
-  --A_C: var(--A_C-V, infinite)!important;
+/* X */
+[class*="@sl-x-o"] {
+  --ATX0: 0;
+  --ATX1: var(--Avslx);
 }
 
-[data-A*="_repeat-1"] {
-  --A_C-V: 1;
+/* Invert */
+[class*="@sl-x-out!"] {
+  --Arsx: -1;
 }
 
-[data-A*="_repeat-2"] {
-  --A_C-V: 2;
+/* Y */
+[class*="@sl-y-o"] {
+  --ATY0: 0;
+  --ATY1: var(--Avsly);
 }
 
-[data-A*="_repeat-3"] {
-  --A_C-V: 3;
+/* Invert */
+[class*="@sl-y-out!"] {
+  --Arsy: -1;
 }
 
-[data-A*="_repeat-4"] {
-  --A_C-V: 4;
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Rotate
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@rt"] {
+  transform-style: preserve-3d;
+  --AN: steps2;
+  --AD: 1;
 }
 
-[data-A*="_repeat-5"] {
-  --A_C-V: 5;
+/* X */
+[class*="@rt-x"] {
+  --ARX1: calc(360deg * var(--Arrx, 1));
+}
+
+/* Invert */
+[class*="@rt-x!"] {
+  --Arrx: -1;
+}
+
+/* Y */
+[class*="@rt-y"] {
+  --ARY1: calc(360deg * var(--Arry, 1));
+}
+
+/* Invert */
+[class*="@rt-y!"] {
+  --Arry: -1;
+}
+
+/* Z */
+[class*="@rt-z"] {
+  --ARZ1: calc(360deg * var(--Arrz, 1));
+}
+
+/* Invert */
+[class*="@rt-z!"] {
+  --Arrz: -1;
 }
 
 /*-----------------------
-	Direction
+	In
 -----------------------*/
-[data-A*="_alt"] {
-  --A_DR: alternate;
+/* X */
+[class*="@rt-x-i"] {
+  --ARX0: calc(90deg * var(--Arrx, 1));
+  --ARX1: 0;
 }
 
-[data-A*="_alt"] {
-  --A_DR: alternate;
+/* Invert */
+[class*="@rt-x-in!"] {
+  --Arrx: -1;
+}
+
+/* Y */
+[class*="@rt-y-i"] {
+  --ARY0: calc(90deg * var(--Arry, 1));
+  --ARY1: 0;
+}
+
+/* Invert */
+[class*="@rt-y-in!"] {
+  --Arry: -1;
+}
+
+/* Z */
+[class*="@rt-z-i"] {
+  --ARZ0: calc(90deg * var(--Arrz, 1));
+  --ARZ1: 0;
+}
+
+/* Invert */
+[class*="@rt-z-in!"] {
+  --Arrz: -1;
 }
 
 /*-----------------------
-	Duration
+	Out
 -----------------------*/
+/* X */
+[class*="@rt-x-o"] {
+  --ARX0: 0;
+  --ARX1: 90deg;
+}
+
+/* Invert */
+[class*="@rt-x-out!"] {
+  --Arrx: -1;
+}
+
+/* Y */
+[class*="@rt-y-o"] {
+  --ARY0: 0;
+  --ARY1: 90deg;
+}
+
+/* Invert */
+[class*="@rt-y-out!"] {
+  --Arry: -1;
+}
+
+/* Z */
+[class*="@rt-z-o"] {
+  --ARZ0: 0;
+  --ARZ1: 90deg;
+}
+
+/* Invert */
+[class*="@rt-z-out!"] {
+  --Arrz: -1;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Scale
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@sc"] {
+  --AN: steps2;
+}
+
+/* --------------------
+	In
+-------------------- */
+[class*="@sc-i"] {
+  --ASX0: 0;
+  --ASY0: 0;
+}
+
+/* Invert */
+[class*="@sc-in!"] {
+  --ASX0: 2;
+  --ASY0: 2;
+}
+
+/* --------------------
+	Out
+-------------------- */
+[class*="@sc-o"] {
+  --ASX1: 0;
+  --ASY1: 0;
+}
+
+/* Invert */
+[class*="@sc-out!"] {
+  --ASX1: 2;
+  --ASY1: 2;
+}
+
+/* --------------------
+	X In
+-------------------- */
+[class*="@sc-x-i"] {
+  --ASX0: 0;
+}
+
+/* Invert */
+[class*="@sc-x-in!"] {
+  --ASX0: 2;
+}
+
+/* --------------------
+	X Out
+-------------------- */
+[class*="@sc-x-o"] {
+  --ASX1: 2;
+}
+
+/* Invert */
+[class*="@sc-x-out!"] {
+  --ASX1: 0;
+}
+
+/* --------------------
+	Y In
+-------------------- */
+[class*="@sc-y-i"] {
+  --ASY0: 0;
+}
+
+/* Invert */
+[class*="@sc-y-in!"] {
+  --ASY0: 2;
+}
+
+/* --------------------
+	Y Out
+-------------------- */
+[class*="@sc-y-o"] {
+  --ASY1: 2;
+}
+
+/* Invert */
+[class*="@sc-y-out!"] {
+  --ASY1: 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Spiral
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@sp"] {
+  --AN: steps2;
+  --AD: .7;
+  --Avspx: calc(100% * var(--AL) * var(--Arsp, 1));
+  --Avspd: calc(360deg * var(--AL));
+  --Avspdr: calc(var(--Avspd) * -1);
+}
+
+/* --------------------
+	X
+-------------------- */
+[class*="@sp-i"] {
+  --ATX0: var(--Avspx);
+  --ARZ1: var(--Avspdr);
+  --ARNZ1: var(--Avspd);
+}
+
+/* --------------------
+	Y
+-------------------- */
+[class*="@sp-o"] {
+  --ATX1: var(--Avspx);
+  --ARZ1: var(--Avspdr);
+  --ARNZ1: var(--Avspd);
+}
+
+/* --------------------
+	Inbert
+-------------------- */
+[class*="@sp-in!"],
+[class*="@sp-out!"] {
+  --Arsp: -1;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Vibrate
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@vb"] {
+  --AN: steps2;
+  --Avvbd: calc(360deg * var(--AL) * 6);
+  --ATX0: calc(10% * var(--AL));
+  --ARZ1: var(--Avvbd);
+  --ARNZ1: calc(var(--Avvbd) * -1);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Perspective
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@pr"] {
+  --AN: steps2;
+  --AP: calc(var(--Avpr, 500) * var(--Apvv, 1) * var(--Apru, 1px));
+  perspective: var(--AP);
+}
+
+/*-----------------------
+	In
+-----------------------*/
+[class*="@pr-i"] {
+  --AOZ0: 50vw;
+}
+
+/* Invert */
+[class*="@pr-in!"] {
+  --AOZ0: -50vw;
+}
+
+/*-----------------------
+	Out
+-----------------------*/
+[class*="@pr-o"] {
+  --AOZ10: 50vw;
+}
+
+/* Invert */
+[class*="@pr-out!"] {
+  --AOZ10: -50vw;
+}
+
+/*-----------------------
+	Unit
+-----------------------*/
+/* Vw */
+[class*="@pr-vw"] {
+  --Avpr: 25;
+  --Apru: 1vw;
+}
+
+/* Vh */
+[class*="@pr-vh"] {
+  --Avpr: 25;
+  --Apru: 1vh;
+}
+
+/*-----------------------
+	Velocity
+-----------------------*/
+[class*="@pr-none"] {
+  --Apvv: 0;
+}
+
 /* Up */
-[data-A*="_speed-up"] {
-  --A_T: 1;
+[class*="@pr-up"] {
+  --Apvv: .8;
 }
 
-[data-A*="_speed-up+"] {
-  --A_T: .8;
+[class*="@pr-up+"] {
+  --Apvv: .6;
 }
 
-[data-A*="_speed-up++"] {
-  --A_T: .6;
+[class*="@pr-up++"] {
+  --Apvv: .4;
 }
 
-[data-A*="_speed-up+++"] {
-  --A_T: .4;
-}
-
-[data-A*="_speed-up++++"] {
-  --A_T: .2;
+[class*="@pr-up+++"] {
+  --Apvv: .2;
 }
 
 /* Down */
-[data-A*="_speed-down"] {
-  --A_T: 2;
+[class*="@pr-down"] {
+  --Apvv: 1.2;
 }
 
-[data-A*="_speed-down+"] {
-  --A_T: 4;
+[class*="@pr-down+"] {
+  --Apvv: 1.4;
 }
 
-[data-A*="_speed-down++"] {
-  --A_T: 6;
+[class*="@pr-down++"] {
+  --Apvv: 1.6;
 }
 
-[data-A*="_speed-down+++"] {
-  --A_T: 8;
+[class*="@pr-down+++"] {
+  --Apvv: 1.8;
 }
 
-[data-A*="_speed-down++++"] {
-  --A_T: 10;
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Bounce
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@bn"] {
+  --AN: steps10;
+  --AD: 1;
+}
+
+/* X */
+[class*="@bn"]:not([class*="@bn-"]),
+[class*="@bn-x"] {
+  --Arbx: 1;
+  --ASX0: calc(1 - var(--ASP0) * var(--Arbx));
+  --ASX1: calc(1 + var(--ASP1) * var(--Arbx));
+  --ASX2: calc(1 - var(--ASP2) * var(--Arbx));
+  --ASX3: calc(1 + var(--ASP3) * var(--Arbx));
+  --ASX4: calc(1 - var(--ASP4) * var(--Arbx));
+  --ASX5: calc(1 + var(--ASP5) * var(--Arbx));
+  --ASX6: calc(1 - var(--ASP6) * var(--Arbx));
+  --ASX7: calc(1 + var(--ASP7) * var(--Arbx));
+  --ASX8: calc(1 - var(--ASP8) * var(--Arbx));
+  --ASX9: calc(1 + var(--ASP9) * var(--Arbx));
+}
+
+/* Y */
+[class*="@bn"]:not([class*="@bn-"]),
+[class*="@bn-y"] {
+  --Arby: 1;
+  --ASY0: calc(1 - var(--ASP0) * var(--Arby));
+  --ASY1: calc(1 + var(--ASP1) * var(--Arby));
+  --ASY2: calc(1 - var(--ASP2) * var(--Arby));
+  --ASY3: calc(1 + var(--ASP3) * var(--Arby));
+  --ASY4: calc(1 - var(--ASP4) * var(--Arby));
+  --ASY5: calc(1 + var(--ASP5) * var(--Arby));
+  --ASY6: calc(1 - var(--ASP6) * var(--Arby));
+  --ASY7: calc(1 + var(--ASP7) * var(--Arby));
+  --ASY8: calc(1 - var(--ASP8) * var(--Arby));
+  --ASY9: calc(1 + var(--ASP9) * var(--Arby));
+}
+
+/* --------------------
+	Invert
+-------------------- */
+[class*="@bn!"][class] {
+  --Arbx: -1;
+  --Arby: -1;
+}
+
+/* X */
+[class*="@bn-x!"] {
+  --Arbx: -1;
+}
+
+/* Y */
+[class*="@bn-y!"] {
+  --Arby: -1;
+}
+
+/* --------------------
+	Multiple
+-------------------- */
+[class*="@bn"][class*="@sl"] {
+  --ATX0: calc(var(--Avslx) * 2);
+  --ATY0: calc(var(--Avsly) * 2);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Shake
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="@sh"] {
+  --AN: steps10;
+  --AD: 1;
+}
+
+/* --------------------
+	X
+-------------------- */
+[class*="@sh-x"] {
+  --Arshx: 1;
+  --ATX0: calc(100% * var(--ASP0) * var(--Arshx));
+  --ATX1: calc(-100% * var(--ASP1) * var(--Arshx));
+  --ATX2: calc(100% * var(--ASP2) * var(--Arshx));
+  --ATX3: calc(-100% * var(--ASP3) * var(--Arshx));
+  --ATX4: calc(100% * var(--ASP4) * var(--Arshx));
+  --ATX5: calc(-100% * var(--ASP5) * var(--Arshx));
+  --ATX6: calc(100% * var(--ASP6) * var(--Arshx));
+  --ATX7: calc(-100% * var(--ASP7) * var(--Arshx));
+  --ATX8: calc(100% * var(--ASP8) * var(--Arshx));
+  --ATX9: calc(-100% * var(--ASP9) * var(--Arshx));
+}
+
+/* Invert */
+[class*="@sh-x!"] {
+  --Arshx: -1;
+}
+
+/* --------------------
+	Y
+-------------------- */
+[class*="@sh-y"] {
+  --Arshy: 1;
+  --ATY0: calc(100% * var(--ASP0) * var(--Arshy));
+  --ATY1: calc(-100% * var(--ASP1) * var(--Arshy));
+  --ATY2: calc(100% * var(--ASP2) * var(--Arshy));
+  --ATY3: calc(-100% * var(--ASP3) * var(--Arshy));
+  --ATY4: calc(100% * var(--ASP4) * var(--Arshy));
+  --ATY5: calc(-100% * var(--ASP5) * var(--Arshy));
+  --ATY6: calc(100% * var(--ASP6) * var(--Arshy));
+  --ATY7: calc(-100% * var(--ASP7) * var(--Arshy));
+  --ATY8: calc(100% * var(--ASP8) * var(--Arshy));
+  --ATY9: calc(-100% * var(--ASP9) * var(--Arshy));
+}
+
+/* Invert */
+[class*="@sh-y!"] {
+  --Arshy: -1;
+}
+
+/* --------------------
+	Multiple
+-------------------- */
+[class*="@sh"][class*="@sl"] {
+  --ATX0: calc(var(--Avslx) * 2);
+  --ATY0: calc(var(--Avsly) * 2);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	KEY: Flick
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="fl"] {
+  transform-style: preserve-3d;
+  --AN: steps10;
+  --AD: 1.5;
+  --Arf: 1;
+  --Avad: 0deg;
+  /* Spring */
+  --Avrs0: calc(-120deg * var(--ASP0) * var(--Arf) + var(--Avad));
+  --Avrs1: calc(120deg * var(--ASP1) * var(--Arf) + var(--Avad));
+  --Avrs2: calc(-120deg * var(--ASP2) * var(--Arf) + var(--Avad));
+  --Avrs3: calc(120deg * var(--ASP3) * var(--Arf) + var(--Avad));
+  --Avrs4: calc(-120deg * var(--ASP4) * var(--Arf) + var(--Avad));
+  --Avrs5: calc(120deg * var(--ASP5) * var(--Arf) + var(--Avad));
+  --Avrs6: calc(-120deg * var(--ASP6) * var(--Arf) + var(--Avad));
+  --Avrs7: calc(120deg * var(--ASP7) * var(--Arf) + var(--Avad));
+  --Avrs8: calc(-120deg * var(--ASP8) * var(--Arf) + var(--Avad));
+  --Avrs9: calc(120deg * var(--ASP9) * var(--Arf) + var(--Avad));
+  --Avrs10: calc(0deg + var(--Avad));
+}
+
+/* X */
+[class*="@fl-x"] {
+  --ARX0: var(--Avrs0);
+  --ARX1: var(--Avrs1);
+  --ARX2: var(--Avrs2);
+  --ARX3: var(--Avrs3);
+  --ARX4: var(--Avrs4);
+  --ARX5: var(--Avrs5);
+  --ARX6: var(--Avrs6);
+  --ARX7: var(--Avrs7);
+  --ARX8: var(--Avrs8);
+  --ARX9: var(--Avrs9);
+  --ARX10: var(--Avrs10);
+}
+
+/* Y */
+[class*="@fl-y"] {
+  --ARY0: var(--Avrs0);
+  --ARY1: var(--Avrs1);
+  --ARY2: var(--Avrs2);
+  --ARY3: var(--Avrs3);
+  --ARY4: var(--Avrs4);
+  --ARY5: var(--Avrs5);
+  --ARY6: var(--Avrs6);
+  --ARY7: var(--Avrs7);
+  --ARY8: var(--Avrs8);
+  --ARY9: var(--Avrs9);
+  --ARY10: var(--Avrs10);
+}
+
+/* Z */
+[class*="@fl-z"] {
+  --ARZ0: var(--Avrs0);
+  --ARZ1: var(--Avrs1);
+  --ARZ2: var(--Avrs2);
+  --ARZ3: var(--Avrs3);
+  --ARZ4: var(--Avrs4);
+  --ARZ5: var(--Avrs5);
+  --ARZ6: var(--Avrs6);
+  --ARZ7: var(--Avrs7);
+  --ARZ8: var(--Avrs8);
+  --ARZ9: var(--Avrs9);
+  --ARZ10: var(--Avrs10);
 }
 
 /*-----------------------
-	Intensity
+	Out
 -----------------------*/
+[class*="@fl-x-o"],
+[class*="@fl-y-o"],
+[class*="@fl-z-o"] {
+  --Avad: 90deg;
+}
+
+/*-----------------------
+	Invert
+-----------------------*/
+[class*="@fl-x-in!"],
+[class*="@fl-y-in!"],
+[class*="@fl-z-in!"],
+[class*="@fl-x-out!"],
+[class*="@fl-y-out!"],
+[class*="@fl-z-out!"] {
+  --Arf: -1;
+}
+
+[class*="@fl-z-out!"] {
+  --Avad: -90deg;
+}
+
+/* --------------------
+	Multiple
+-------------------- */
+[class*="@fl"][class*="@sl"] {
+  --ATX0: calc(var(--Avslx) * 2);
+  --ATY0: calc(var(--Avsly) * 2);
+  --ATX1: unset;
+  --ATY1: unset;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modifier: Easing;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="_ease"] {
+  --AE: var(--Ale)!important;
+}
+
+[class*="_ease-lin"] {
+  --Ale: linear;
+}
+
+[class*="_ease-in-out"] {
+  --Ale: ease-in-out;
+}
+
+[class*="_ease-cir"] {
+  --Ale: var(--Acirc);
+}
+
+[class*="_ease-in-cir"] {
+  --Ale: var(--Ain-circ);
+}
+
+[class*="_ease-out-cir"] {
+  --Ale: var(--Aout-circ);
+}
+
+[class*="_ease-in"] {
+  --Ale: ease-in;
+}
+
+[class*="_ease-out"] {
+  --Ale: ease-out;
+}
+
+[class*="_ease-bac"] {
+  --Ale: var(--Aback);
+}
+
+[class*="_ease-in-bac"] {
+  --Ale: var(--Ain-back);
+}
+
+[class*="_ease-out-bac"] {
+  --Ale: var(--Aout-back);
+}
+
+[class*="_ease-exp"] {
+  --Ale: var(--Aexpo);
+}
+
+[class*="_ease-in-exp"] {
+  --Ale: var(--Ain-expo);
+}
+
+[class*="_ease-out-exp"] {
+  --Ale: var(--Aout-expo);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modifier: Repeat (Iterator-count)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="_repeat"] {
+  --AC: var(--Alc, infinite);
+}
+
+[class*="_repeat-2"] {
+  --Alc: 2;
+}
+
+[class*="_repeat-3"] {
+  --Alc: 3;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modifier: Delay
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="_delay"] {
+  animation-delay: var(--ADL);
+}
+
+[class*="_delay-1"] {
+  --ADL: 0.1s;
+}
+
+[class*="_delay-2"] {
+  --ADL: 0.2s;
+}
+
+[class*="_delay-3"] {
+  --ADL: 0.3s;
+}
+
+[class*="_delay-4"] {
+  --ADL: 0.4s;
+}
+
+[class*="_delay-5"] {
+  --ADL: 0.5s;
+}
+
+[class*="_delay-6"] {
+  --ADL: 0.6s;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modifier: Speed (Duration)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="_speed"] {
+  --AS: var(--Als);
+}
+
 /* Up */
-[data-A*="_level-up"] {
-  --A_L: 2;
+[class*="_speed-up"] {
+  --Als: .8;
 }
 
-[data-A*="_level-up+"] {
-  --A_L: 3;
+[class*="_speed-up+"] {
+  --Als: .6;
 }
 
-[data-A*="_level-up++"] {
-  --A_L: 4;
+[class*="_speed-up++"] {
+  --Als: .4;
 }
 
-[data-A*="_level-up+++"] {
-  --A_L: 5;
-}
-
-[data-A*="_level-up++++"] {
-  --A_L: 6;
+[class*="_speed-up+++"] {
+  --Als: .2;
 }
 
 /* Down */
-[data-A*="_level-down"] {
-  --A_L: .5;
+[class*="_speed-down"] {
+  --Als: 2;
 }
 
-[data-A*="_level-down+"] {
-  --A_L: .25;
+[class*="_speed-down+"] {
+  --Als: 4;
 }
 
-[data-A*="_level-down++"] {
-  --A_L: .12;
+[class*="_speed-down++"] {
+  --Als: 6;
 }
 
-[data-A*="_level-down+++"] {
-  --A_L: .06;
+[class*="_speed-down+++"] {
+  --Als: 8;
 }
 
-[data-A*="_level-down++++"] {
-  --A_L: .03;
-}
-
-/*-----------------------
-	Easing
------------------------*/
-[data-A*="_ease"],
-[data-A*="_ease"] > * {
-  --A_E: var(--A_E-V, ease)!important;
-}
-
-[data-A*="_ease-linear"] {
-  --A_E-V: linear;
-}
-
-[data-A*="_ease-expo"] {
-  --A_E-V: var(--A_expo);
-}
-
-[data-A*="_ease-circ"] {
-  --A_E-V: var(--A_circ);
-}
-
-[data-A*="_ease-back"] {
-  --A_E-V: var(--A_back);
-}
-
-[data-A*="_ease-in"] {
-  --A_E-V: ease-in;
-}
-
-[data-A*="_ease-in-out"] {
-  --A_E-V: ease-in-out;
-}
-
-[data-A*="_ease-in-expo"] {
-  --A_E-V: var(--A_in_expo);
-}
-
-[data-A*="_ease-in-circ"] {
-  --A_E-V: var(--A_in-circ);
-}
-
-[data-A*="_ease-in-back"] {
-  --A_E-V: var(--A_in-back);
-}
-
-[data-A*="_ease-out"] {
-  --A_E-V: ease-out;
-}
-
-[data-A*="_ease-out-expo"] {
-  --A_E-V: var(--A_out-expo);
-}
-
-[data-A*="_ease-out-circ"] {
-  --A_E-V: var(--A_out_circ);
-}
-
-[data-A*="_ease-out-back"] {
-  --A_E-V: var(--A_out-back);
-}
-
-/*-----------------------
-	Transform origin
------------------------*/
-[data-A*="_origin-t"] {
-  --A_O: top;
-}
-
-[data-A*="_origin-r"] {
-  --A_O: right;
-}
-
-[data-A*="_origin-tr"] {
-  --A_O: right top;
-}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[data-A*="_origin-b"] {
-  --A_O: bottom;
-}
-
-[data-A*="_origin-br"] {
-  --A_O: right bottom;
-}
-
-[data-A*="_origin-l"] {
-  --A_O: left;
-}
-
-[data-A*="_origin-bl"] {
-  --A_O: left bottom;
-}
-
-[data-A*="_origin-tl"] {
-  --A_O: top left;
-}
-
-/*-----------------------
-	Delay
------------------------*/
-[data-A*="_delay-1"] {
-  --A_D: .5s;
-}
-
-[data-A*="_delay-2"] {
-  --A_D: 1s;
-}
-
-[data-A*="_delay-3"] {
-  --A_D: 1.5s;
-}
-
-[data-A*="_delay-4"] {
-  --A_D: 2s;
-}
-
-[data-A*="_delay-5"] {
-  --A_D: 2.5s;
-}
-
-[data-A*="_delay-6"] {
-  --A_D: 3s;
-}
-
-[data-A*="_delay-7"] {
-  --A_D: 3.5s;
-}
-
-[data-A*="_delay-8"] {
-  --A_D: 4s;
-}
-
-[data-A*="_delay-9"] {
-  --A_D: 4.5s;
-}
+	Modifier: Level (Intensity)
 
-[data-A*="_delay-10"] {
-  --A_D: 5s;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Up */
+[class*="_lv-up"] {
+  --AL: 1.5;
 }
 
-/*-----------------------
-	Perspective
------------------------*/
-[data-A*="_perspective-"] {
-  perspective: var(--A_P);
+[class*="_lv-up+"] {
+  --AL: 2;
 }
 
-[data-A*="_perspective-0"] {
-  --A_P: 0px;
+[class*="_lv-up++"] {
+  --AL: 2.5;
 }
 
-[data-A*="_perspective-1"] {
-  --A_P: 600px;
+[class*="_lv-up+++"] {
+  --AL: 3;
 }
 
-[data-A*="_perspective-2"] {
-  --A_P: 400px;
+/* Down */
+[class*="_lv-down"] {
+  --AL: .8;
 }
 
-[data-A*="_perspective-3"] {
-  --A_P: 200px;
+[class*="_lv-down+"] {
+  --AL: .6;
 }
 
-/* vw */
-[data-A*="_perspective-1-vw"] {
-  --A_P: 100vw;
+[class*="_lv-down++"] {
+  --AL: .4;
 }
 
-[data-A*="_perspective-2-vw"] {
-  --A_P: 60vw;
+[class*="_lv-down+++"] {
+  --AL: .2;
 }
 
-[data-A*="_perspective-3-vw"] {
-  --A_P: 40vw;
-}
-
-/* vh */
-[data-A*="_perspective-1-vh"] {
-  --A_P: 100vh;
-}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[data-A*="_perspective-2-vh"] {
-  --A_P: 60vh;
-}
+	Modifier: Transform origin
 
-[data-A*="_perspective-3-vh"] {
-  --A_P: 40vh;
-}
+	lt | t | rt
+	l  |   | r
+	lb | b | rb
 
-/*-----------------------
-	Ascend
------------------------*/
-[data-A*="_ascend"] > * {
-  animation-delay: calc(.1s * var(--A_LG, 0) * var(--A_VL, 1));
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="_origin-t"] {
+  --AOXY: 50% 0;
 }
 
-[data-A*="_ascend"] > *:nth-child(2) {
-  --A_LG: 1;
+[class*="_origin-r"] {
+  --AOXY: 100% 50%;
 }
 
-[data-A*="_ascend"] > *:nth-child(3) {
-  --A_LG: 2;
+[class*="_origin-rt"] {
+  --AOXY: 100% 0;
 }
 
-[data-A*="_ascend"] > *:nth-child(4) {
-  --A_LG: 3;
+[class*="_origin-b"] {
+  --AOXY: 50% 100%;
 }
 
-[data-A*="_ascend"] > *:nth-child(5) {
-  --A_LG: 4;
+[class*="_origin-rb"] {
+  --AOXY: 100% 100%;
 }
 
-[data-A*="_ascend"] > *:nth-child(6) {
-  --A_LG: 5;
+[class*="_origin-l"] {
+  --AOXY: 0 50%;
 }
 
-[data-A*="_ascend"] > *:nth-child(7) {
-  --A_LG: 6;
+[class*="_origin-lb"] {
+  --AOXY: 0 100%;
 }
 
-[data-A*="_ascend"] > *:nth-child(8) {
-  --A_LG: 7;
+[class*="_origin-lt"] {
+  --AOXY: 0 0;
 }
 
-[data-A*="_ascend"] > *:nth-child(9) {
-  --A_LG: 8;
-}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[data-A*="_ascend"] > *:nth-child(10) {
-  --A_LG: 9;
-}
+	Modifier: Direction
 
-[data-A*="_ascend"] > *:nth-child(11) {
-  --A_LG: 10;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="_alt"] {
+  --ADR: alternate;
+  --AC: 2;
 }
 
-[data-A*="_ascend"] > *:nth-child(12) {
-  --A_LG: 11;
+[class*="_alt-rev"] {
+  --ADR: alternate-reverse;
+  --AC: 2;
 }
 
-[data-A*="_ascend"] > *:nth-child(13) {
-  --A_LG: 12;
+[class*="_rev"] {
+  --ADR: reverse;
 }
 
-[data-A*="_ascend"] > *:nth-child(14) {
-  --A_LG: 13;
-}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[data-A*="_ascend"] > *:nth-child(15) {
-  --A_LG: 14;
-}
+	Modifier: Ascend
 
-[data-A*="_ascend"] > *:nth-child(16) {
-  --A_LG: 15;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+[class*="_each"],
+[class*="_ascend"],
+[class*="_descend"],
+[class*="_odd"],
+[class*="_even"] {
+  animation-name: unset;
 }
 
-[data-A*="_ascend"] > *:nth-child(17) {
-  --A_LG: 16;
+[class*="_each"] > * {
+  animation: inherit;
+  animation-name: var(--AN);
 }
 
-[data-A*="_ascend"] > *:nth-child(18) {
-  --A_LG: 17;
+[class*="_ascend"] > *,
+[class*="_descend"] > *,
+[class*="_odd"] > *,
+[class*="_even"] > * {
+  animation: inherit;
+  animation-name: var(--AN);
+  animation-delay: calc(var(--Aord, 0) * var(--Aorv, 1) * .1s);
 }
 
-[data-A*="_ascend"] > *:nth-child(19) {
-  --A_LG: 18;
+/* Ascend */
+[class*="_ascend"] > *:nth-child(2) {
+  --Aord: 1;
 }
 
-[data-A*="_ascend"] > *:nth-child(20) {
-  --A_LG: 19;
+[class*="_ascend"] > *:nth-child(3) {
+  --Aord: 2;
 }
 
-/*-----------------------
-	Descend
------------------------*/
-[data-A*="_descend"] > * {
-  animation-delay: calc(.1s * var(--A_LG, 0) * var(--A_VL, 1));
+[class*="_ascend"] > *:nth-child(4) {
+  --Aord: 3;
 }
 
-[data-A*="_descend"] > *:nth-last-child(2) {
-  --A_LG: 1;
+[class*="_ascend"] > *:nth-child(5) {
+  --Aord: 4;
 }
 
-[data-A*="_descend"] > *:nth-last-child(3) {
-  --A_LG: 2;
+[class*="_ascend"] > *:nth-child(6) {
+  --Aord: 5;
 }
 
-[data-A*="_descend"] > *:nth-last-child(4) {
-  --A_LG: 3;
+[class*="_ascend"] > *:nth-child(7) {
+  --Aord: 6;
 }
 
-[data-A*="_descend"] > *:nth-last-child(5) {
-  --A_LG: 4;
+[class*="_ascend"] > *:nth-child(8) {
+  --Aord: 7;
 }
 
-[data-A*="_descend"] > *:nth-last-child(6) {
-  --A_LG: 5;
+[class*="_ascend"] > *:nth-child(9) {
+  --Aord: 8;
 }
 
-[data-A*="_descend"] > *:nth-last-child(7) {
-  --A_LG: 6;
+[class*="_ascend"] > *:nth-child(10) {
+  --Aord: 9;
 }
 
-[data-A*="_descend"] > *:nth-last-child(8) {
-  --A_LG: 7;
+[class*="_ascend"] > *:nth-child(11) {
+  --Aord: 10;
 }
 
-[data-A*="_descend"] > *:nth-last-child(9) {
-  --A_LG: 8;
+[class*="_ascend"] > *:nth-child(12) {
+  --Aord: 11;
 }
 
-[data-A*="_descend"] > *:nth-last-child(10) {
-  --A_LG: 9;
+/* Descend */
+[class*="_descend"] > *:nth-last-child(2) {
+  --Aord: 1;
 }
 
-[data-A*="_descend"] > *:nth-last-child(11) {
-  --A_LG: 10;
+[class*="_descend"] > *:nth-last-child(3) {
+  --Aord: 2;
 }
 
-[data-A*="_descend"] > *:nth-last-child(12) {
-  --A_LG: 11;
+[class*="_descend"] > *:nth-last-child(4) {
+  --Aord: 3;
 }
 
-[data-A*="_descend"] > *:nth-last-child(13) {
-  --A_LG: 12;
+[class*="_descend"] > *:nth-last-child(5) {
+  --Aord: 4;
 }
 
-[data-A*="_descend"] > *:nth-last-child(14) {
-  --A_LG: 13;
+[class*="_descend"] > *:nth-last-child(6) {
+  --Aord: 5;
 }
 
-[data-A*="_descend"] > *:nth-last-child(15) {
-  --A_LG: 14;
+[class*="_descend"] > *:nth-last-child(7) {
+  --Aord: 6;
 }
 
-[data-A*="_descend"] > *:nth-last-child(16) {
-  --A_LG: 15;
+[class*="_descend"] > *:nth-last-child(8) {
+  --Aord: 7;
 }
 
-[data-A*="_descend"] > *:nth-last-child(17) {
-  --A_LG: 16;
+[class*="_descend"] > *:nth-last-child(9) {
+  --Aord: 8;
 }
 
-[data-A*="_descend"] > *:nth-last-child(18) {
-  --A_LG: 17;
+[class*="_descend"] > *:nth-last-child(10) {
+  --Aord: 9;
 }
 
-[data-A*="_descend"] > *:nth-last-child(19) {
-  --A_LG: 18;
+[class*="_descend"] > *:nth-last-child(11) {
+  --Aord: 10;
 }
 
-[data-A*="_descend"] > *:nth-last-child(20) {
-  --A_LG: 19;
+[class*="_descend"] > *:nth-last-child(12) {
+  --Aord: 11;
 }
 
 /*-----------------------
 	Odd - Even
 -----------------------*/
-[data-A*="_odd"] > *,
-[data-A*="_even"] > * {
-  animation-delay: calc(.1s * var(--A_LG, 0) * var(--A_VL, 1));
+[class*="_odd"] > :nth-child(odd) {
+  --Aord: 1;
 }
 
-[data-A*="_odd"] > * {
-  --A_LG: 1;
-}
-
-[data-A*="_odd"] > :nth-child(odd) {
-  --A_LG: 2;
-}
-
-[data-A*="_even"] > * {
-  --A_LG: 2;
-}
-
-[data-A*="_even"] > :nth-child(odd) {
-  --A_LG: 1;
+[class*="_even"] > :nth-child(even) {
+  --Aord: 1;
 }
 
 /*-----------------------
 	Velocity
 -----------------------*/
 /* Up */
-[data-A*="_ascend-up"],
-[data-A*="_descend-up"] {
-  --A_VL: .8;
+[class*="_ascend-up"],
+[class*="_descend-up"] {
+  --Aorv: .8;
 }
 
-[data-A*="_ascend-up+"],
-[data-A*="_descend-up+"] {
-  --A_VL: .4;
+[class*="_ascend-up+"],
+[class*="_descend-up+"] {
+  --Aorv: .4;
 }
 
-[data-A*="_ascend-up++"],
-[data-A*="_descend-up++"] {
-  --A_VL: .2;
+[class*="_ascend-up++"],
+[class*="_descend-up++"] {
+  --Aorv: .2;
 }
 
-[data-A*="_ascend-max"],
-[data-A*="_descend-max"],
-[data-A*="_ascend-up+++"],
-[data-A*="_descend-up+++"] {
-  --A_VL: .1;
+[class*="_ascend-up+++"],
+[class*="_descend-up+++"] {
+  --Aorv: .1;
 }
 
 /* Down */
-[data-A*="_ascend-down"],
-[data-A*="_descend-down"] {
-  --A_VL: 1.2;
+[class*="_ascend-down"],
+[class*="_descend-down"] {
+  --Aorv: 1.2;
 }
 
-[data-A*="_ascend-down+"],
-[data-A*="_descend-down+"] {
-  --A_VL: 1.4;
+[class*="_ascend-down+"],
+[class*="_descend-down+"] {
+  --Aorv: 1.4;
 }
 
-[data-A*="_ascend-down++"],
-[data-A*="_descend-down++"] {
-  --A_VL: 1.8;
+[class*="_ascend-down++"],
+[class*="_descend-down++"] {
+  --Aorv: 1.6;
 }
 
-[data-A*="_ascend-min"],
-[data-A*="_descend-min"],
-[data-A*="_ascend-down+++"],
-[data-A*="_descend-down+++"] {
-  --A_VL: 2.2;
-}
-
-/*-----------------------
-	Hover
------------------------*/
-[data-A*="_hover"],
-[data-A*="_HOVER"] > * {
-  animation-name: none;
-}
-
-[data-A*="_hover"]:hover,
-[data-A*="_HOVER"] > *:hover {
-  animation-name: var(--A_A1, none), var(--A_A2, none), var(--A_A3, none);
-}
-
-/* Transition */
-[data-A*="_hover-t"],
-[data-A*="_HOVER-t"] > * {
-  transition-property: all;
-  transition-duration: calc(var(--A_T) * var(--A_T-D, 1) * 1s);
-  transition-timing-function: var(--A_E);
-  transition-delay: var(--A_D);
-}
-
-[data-A*="_hover-t"]:hover,
-[data-A*="_HOVER-t"] > *:hover {
-  outline: 1px solid orangered;
-  outline: 1px solid orangered;
-  animation-name: none;
-  transform: perspective(var(--A_P)) translate3d(var(--A_TX1, 0), var(--A_TY1, 0), var(--A_TZ1, 0)) scale3d(var(--A_SX1, 1), var(--A_SY1, 1), var(--A_SZ1, 1)) rotateX(var(--A_RX1, 0)) rotateY(var(--A_RY1, 0)) rotateZ(var(--A_RZ1, 0));
-}
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-	MODULE: @fade
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-[data-A*="@fade"],
-[data-A*="@FADE"] > * {
-  --A_A1: steps2fx;
-  --A_TD: .5;
-  --A_OP0: 0;
-  opacity: 0;
-}
-
-[data-A*="@fade-out"],
-[data-A*="@FADE-out"] > * {
-  --A_OP0: 1;
-  --A_OP1: 0;
-  --A_OP2: 0;
-  --A_OP3: 0;
-  opacity: 1;
-}
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-	MODULE: @slide
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-[data-A*="@slide"],
-[data-A*="@SLIDE"] > * {
-  --A_A2: steps2;
-  --A_TD: .5;
-  --A_E: var(--A_circ);
-  --A_LS: calc(1 + calc(var(--A_L) * .3));
-  --A_CS: calc(100% * var(--A_LS));
-  --A_CS2: calc(100px * var(--A_LS));
-}
-
-/*-----------------------
-	@slide-(x|y|z)(:r)?
------------------------*/
-/* X */
-[data-A*="@slide-x"],
-[data-A*="@SLIDE-x"] > * {
-  --A_RSX: -1;
-  --A_CSX: calc(var(--A_CS) * var(--A_RSX));
-  --A_TX0: var(--A_CSX);
-  --A_TX1: calc(var(--A_CSX) * -1);
-}
-
-/* Invert */
-[data-A*="@slide-x:r"],
-[data-A*="@SLIDE-x:r"] {
-  --A_RSX: 1;
-}
-
-/* Y */
-[data-A*="@slide-y"],
-[data-A*="@SLIDE-y"] > * {
-  --A_RSY: -1;
-  --A_CSY: calc(var(--A_CS) * var(--A_RSY));
-  --A_TY0: var(--A_CSY);
-  --A_TY1: calc(var(--A_CSY) * -1);
-}
-
-/* Invert */
-[data-A*="@slide-y:r"],
-[data-A*="@SLIDE-y:r"] {
-  --A_RSY: 1;
-}
-
-/* Z */
-[data-A*="@slide-z"],
-[data-A*="@SLIDE-z"] > * {
-  --A_RSZ: -1;
-  --A_CSZ: calc(var(--A_CS2) * var(--A_RSZ));
-  --A_TZ0: var(--A_CSZ);
-  --A_TZ1: calc(var(--A_CSZ) * -1);
-}
-
-/* Invert */
-[data-A*="@slide-z:r"],
-[data-A*="@SLIDE-z:r"] {
-  --A_RSZ: 1;
-}
-
-/*-----------------------
-	@slide-(x|y|z)-in(:r)?
------------------------*/
-/* X */
-[data-A*="@slide-x-in"],
-[data-A*="@SLIDE-x-in"] > * {
-  --A_TX0: var(--A_CSX);
-  --A_TX1: inherit;
-}
-
-/* Invert */
-[data-A*="@slide-x-in:r"],
-[data-A*="@SLIDE-x-in:r"] > * {
-  --A_RSX: 1;
-}
-
-/* Y */
-[data-A*="@slide-y-in"],
-[data-A*="@SLIDE-y-in"] > * {
-  --A_TY0: var(--A_CSY);
-  --A_TY1: 0;
-}
-
-/* Invert */
-[data-A*="@slide-y-in:r"],
-[data-A*="@SLIDE-y-in:r"] > * {
-  --A_RSY: 1;
-}
-
-/* Z */
-[data-A*="@slide-z-in"],
-[data-A*="@SLIDE-z-in"] > * {
-  --A_TZ0: var(--A_CSZ);
-  --A_TZ1: 0;
-}
-
-/* Invert */
-[data-A*="@slide-z-in:r"],
-[data-A*="@SLIDE-z-in:r"] > * {
-  --A_RSZ: 1;
-}
-
-/*-----------------------
-	@slide-(x|y|z)-out(:r)?
------------------------*/
-/* X */
-[data-A*="@slide-x-out"],
-[data-A*="@SLIDE-x-out"] > * {
-  --A_TX0: inherit;
-  --A_TX1: var(--A_CSX);
-}
-
-/* Invert */
-[data-A*="@slide-x-out:r"],
-[data-A*="@SLIDE-x-out:r"] > * {
-  --A_RSX: 1;
-}
-
-/* Y */
-[data-A*="@slide-y-out"],
-[data-A*="@SLIDE-y-out"] > * {
-  --A_TY0: inherit;
-  --A_TY1: var(--A_CSY);
-}
-
-/* Invert */
-[data-A*="@slide-y-out:r"],
-[data-A*="@SLIDE-y-out:r"] > * {
-  --A_RSY: 1;
-}
-
-/* Z */
-[data-A*="@slide-z-out"],
-[data-A*="@SLIDE-z-out"] > * {
-  --A_TZ0: inherit;
-  --A_TZ1: var(--A_CSZ);
-}
-
-/* Invert */
-[data-A*="@slide-z-out:r"],
-[data-A*="@SLIDE-z-out:r"] > * {
-  --A_RSZ: 1;
-}
-
-/*-----------------------
-	Swoosh
-	@slide-(x|y|z)-in-s(:r)?
------------------------*/
-/* X */
-[data-A*="@slide-x-in-s"],
-[data-A*="@SLIDE-x-in-s"] > * {
-  --A_A2: steps4;
-  --A_TD: .5;
-  --A_O: right;
-  --A_TX1: calc(-15% * var(--A_RSX));
-  --A_SX0: 2;
-  --A_SX1: .8;
-}
-
-/* Invert */
-[data-A*="@slide-x-in-s:r"],
-[data-A*="@SLIDE-x-in-s:r"] > * {
-  --A_O: left;
-  --A_RSX: 1;
-}
-
-/* Y */
-[data-A*="@slide-y-in-s"],
-[data-A*="@SLIDE-y-in-s"] > * {
-  --A_A2: steps4;
-  --A_TD: .5;
-  --A_O: bottom;
-  --A_TY1: calc(-15% * var(--A_RSY));
-  --A_SY0: 2;
-  --A_SY1: .8;
-}
-
-/* Invert */
-[data-A*="@slide-y-in-s:r"],
-[data-A*="@SLIDE-y-in-s:r"] > * {
-  --A_O: top;
-  --A_RSY: 1;
-}
-
-/* Z */
-[data-A*="@slide-z-in-s"],
-[data-A*="@SLIDE-z-in-s"] > * {
-  --A_A2: steps4;
-  --A_TD: .5;
-  --A_TZ1: calc(-115px * var(--A_RSZ));
-  --A_SZ0: 2;
-  --A_SZ1: .8;
-}
-
-/* Invert */
-[data-A*="@slide-z-in-s:r"],
-[data-A*="@SLIDE-z-in-s:r"] > * {
-  --A_RSZ: 1;
-}
-
-/*-----------------------
-	Swoosh
-	@slide-(x|y|z)-out-s(:r)?
------------------------*/
-/* X */
-[data-A*="@slide-x-out-s"],
-[data-A*="@SLIDE-x-out-s"] > * {
-  --A_A2: steps4;
-  --A_TD: .5;
-  --A_O: left;
-  --A_TX1: calc(-40% * var(--A_RSX));
-  --A_TX2: var(--A_CSX);
-  --A_TX3: calc(var(--A_TX2) * 1.2);
-  --A_SX1: .8;
-}
-
-/* Invert */
-[data-A*="@slide-x-out-s:r"],
-[data-A*="@SLIDE-x-out-s:r"] > * {
-  --A_O: right;
-  --A_RSX: 1;
-}
-
-/* Y */
-[data-A*="@slide-y-out-s"],
-[data-A*="@SLIDE-y-out-s"] > * {
-  --A_A2: steps4;
-  --A_TD: .5;
-  --A_O: bottom;
-  --A_TY1: calc(-30% * var(--A_RSY));
-  --A_TY2: var(--A_CSY);
-  --A_TY3: calc(var(--A_TY2) * 1.2);
-  --A_SY1: .8;
-}
-
-/* Invert */
-[data-A*="@slide-y-out-s:r"],
-[data-A*="@SLIDE-y-out-s:r"] > * {
-  --A_O: top;
-  --A_RSY: 1;
-}
-
-/* Z */
-[data-A*="@slide-z-out-s"],
-[data-A*="@SLIDE-z-out-s"] > * {
-  --A_A2: steps4;
-  --A_TD: .5;
-  --A_TZ1: calc(120px * var(--A_RSZ));
-  --A_SX0: 1.2;
-  --A_SY0: 1.2;
-  --A_SX1: .8;
-  --A_SY1: .8;
-}
-
-/* Invert */
-[data-A*="@slide-z-in-s:r"],
-[data-A*="@SLIDE-z-in-s:r"] > * {
-  --A_RSZ: 1;
-}
-
-/* for multiple "@fade-out" */
-[data-A*="-out-s"][data-A*="@fade-out"],
-[data-A*="-out-s"][data-A*="@FADE-out"] > * {
-  --A_OP0: 1;
-  --A_OP1: 1;
-  --A_OP2: 0;
-  --A_OP3: 0;
+[class*="_ascend-down+++"],
+[class*="_descend-down+++"] {
+  --Aorv: 1.8;
 }
