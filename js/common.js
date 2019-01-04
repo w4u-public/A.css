@@ -62,7 +62,6 @@
 		var ua = window.navigator.userAgent.toLowerCase();
 		var ver = window.navigator.appVersion.toLowerCase();
 		var name = "unknown";
-
 		if(ua.indexOf(ua.indexOf("trident/7") != -1)) {
 
 		}
@@ -687,6 +686,7 @@
 	}
 
 	var removeLoadingScreen = function() {
+		console.log("a");
 		var screen = document.querySelector(".loading");
 		screen.remove();
 	}
@@ -697,9 +697,9 @@
 			controlStatus.modifiers(data.modifiers);
 			addControllField(".testArea");
 			setParameterSettings();
-			removeLoadingScreen();
 			assignChangeApplyType(document.querySelector(".testArea_preview_applyChangeButton"));
 			addPreviewSample();
+			// removeLoadingScreen();
 		});
 		controlStatus.symbol(document.querySelector(".symbol_A > :first-child"));
 		controlStatus.preview(document.querySelector(".testArea_preview > div > div"));
@@ -711,7 +711,7 @@
 	===================== */
 
 	window.addEventListener("DOMContentLoaded", function() {
-		showLoadingScreen();
+		// showLoadingScreen();
 	}, false);
 
 	window.addEventListener("load", setup, false);
