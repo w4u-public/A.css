@@ -1,56 +1,138 @@
-# A.css
+# A.css - 15KB
 CSS Animation library.
+
+![Sample1](https://w4u-public.github.io/A.css/img/ex_logo-black.png)
+
+This library is using Custom Properties. "Can I use [var()](https://caniuse.com/#search=var())"
 
 ## Usage
 ````html
 <head>
-  <link rel="stylesheet" href="A.css">
+  <link rel="stylesheet" href="A.min.css" />
 </head>
 ````
 
 ````html
-<div data-A="@slide-x-in">
+<div class="@sl-x">
+  <div>A</div>
+  <div>A</div>
   <div>A</div>
 </div>
 ````
 ### Mixed
 ````html
-<div data-A="@slide-x-in @slide-y-in">
+<div class="@sl-x-in @sl-y-in">
+  <div>A</div>
+  <div>A</div>
   <div>A</div>
 </div>
 ````
+![Sample1](https://w4u-public.github.io/A.css/img/ex_01.png)
+
 ### Ex.
-![Sample1](http://css-initials.com/s/A_ex1.svg)
+- [Swoosh](https://w4u-public.github.io/A.css/?@sl-x&_speed-up++&_lv-up+&_ease-out-back&@fd&@sc-x-in!)
+- [Jelly](https://w4u-public.github.io/A.css/?@bn-x&_origin-b&@bn-y!&@sl-y&@fl-y-in)
+- [Wind](https://w4u-public.github.io/A.css/?@rt-y&_ascend&@pr-in&@fd)
+- [Gather](https://w4u-public.github.io/A.css/?@pr-in&_ascend&_ease-out-back&@fd&@sc-in!)
+## Reference tool
+<https://w4u-public.github.io/A.css/>
 
-## Screenshot
-![Sample1](http://css-initials.com/s/A_ex2.gif)
+### Key
 
-## Reference
-<http://animation.css-initials.com>
-
-| Keyword |
+| Keys |
 |---------|
-| [@fade](http://animation.css-initials.com/fade/)   |
-| [@slide](http://animation.css-initials.com/slide/)  |
-| [@rotate](http://animation.css-initials.com/rotate/) |
-| [@scale](http://animation.css-initials.com/scale/)  |
-| [@bounce](http://animation.css-initials.com/bounce/) |
+| [@fd - Fade](https://w4u-public.github.io/A.css/?@fd)   |
+| [@sl - Slide](https://w4u-public.github.io/A.css/?@sl-x)  |
+| [@rt - Rotate](https://w4u-public.github.io/A.css/?@rt-x) |
+| [@sc - Scale](https://w4u-public.github.io/A.css/?@sc-x)  |
+| [@fl - Flick](https://w4u-public.github.io/A.css/?@fl-x) |
+| [@bn - Bounce](https://w4u-public.github.io/A.css/?@bn) |
+| [@sh - Shake](https://w4u-public.github.io/A.css/?@sk-x) |
+| [@sp - Spiral](https://w4u-public.github.io/A.css/?@sp-x) |
+| [@vb - Viblate](https://w4u-public.github.io/A.css/?@vb) |
+| [@pr - Perspective](https://w4u-public.github.io/A.css/?@pr-in) |
 
-| Global modifier |
-|-----------------|
-| [_delay](http://animation.css-initials.com/modifier/#_delay)          |
-| [_repeat](http://animation.css-initials.com/modifier/#_repeat)         |
-| [_alternate](http://animation.css-initials.com/modifier/#_alternate)      |
-| [_speed](http://animation.css-initials.com/modifier/#_speed)          |
-| [_level](http://animation.css-initials.com/modifier/#_level)          |
-| [_ease](http://animation.css-initials.com/modifier/#_ease)           |
-| [_origin](http://animation.css-initials.com/modifier/#_origin)         |
-| [_perspective](http://animation.css-initials.com/modifier/#_perspective)    |
-| _ascend         |
-| _descend        |
-| _odd            |
-| _even           |
-| [_hover](http://animation.css-initials.com/modifier/#_hover)          |
+### Global Modifier
+
+- Easing
+	- _ease
+	- _ease-back
+	- _ease-in-back
+	- _ease-out-back
+	- _ease-expo
+	- _ease-in-expo
+	- _ease-out-expo
+	- _ease-circ
+	- _ease-in-circ
+	- _ease-out-circ
+	- _ease-in-out
+	- _ease-in
+	- _ease-out
+	- _ease-linear
+- Repeat
+	- _repeat
+	- _repeat-2
+	- _repeat-3
+	- Speed
+	- _speed-up
+	- _speed-up+
+	- _speed-up++
+	- _speed-up+++
+	- _speed-down
+	- _speed-down+
+	- _speed-down++
+	- _speed-down+++
+- Level
+	- _lv-up
+	- _lv-up+
+	- _lv-up++
+	- _lv-up+++
+	- _lv-down
+	- _lv-down+
+	- _lv-down++
+	- _lv-down+++
+- Transform Origin
+	- _origin-t
+	- _origin-rt
+	- _origin-r
+	- _origin-rb
+	- _origin-b
+	- _origin-lb
+	- _origin-l
+	- _origin-lt
+- Direction
+	- _alt
+	- _alt-reverse
+	- _reverse
+- Delay
+	- _delay-1
+	- _delay-2
+	- _delay-3
+	- _delay-4
+	- _delay-5
+	- _delay-6
+- Children
+	- _ascend
+	- _descend
+	- _odd
+	- _even
+	- _each
+	- _ascend-up
+	- _ascend-up+
+	- _ascend-up++
+	- _ascend-up+++
+	- _ascend-down
+	- _ascend-down+
+	- _ascend-down++
+	- _ascend-down+++
+	- _descend-up
+	- _descend-up+
+	- _descend-up++
+	- _descend-up+++
+	- _descend-down
+	- _descend-down+
+	- _descend-down++
+	- _descend-down+++
 
 ## Licence
 MIT
