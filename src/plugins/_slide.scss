@@ -9,7 +9,6 @@ $isImported_slide: true;
 [#{$attr}*="@sl"] {
 	@extend %animationBase;
 	--AN: steps2;
-	--AD: .5;
 	--Avsl: calc(-100% * var(--AL));
 }
 
