@@ -538,6 +538,7 @@
 		addSelectboxFromParameter(divisionedParameters.mixKey, "mix");
 		changeApplyTypeFromParameter(divisionedParameters.modifiers);
 		setPreviewValue(parameterArray);
+		removeLoadingScreen();
 		return true;
 
 		function setParameterFirstSelectbox(parameter) {
@@ -699,7 +700,6 @@
 			setParameterSettings();
 			assignChangeApplyType(document.querySelector(".testArea_preview_applyChangeButton"));
 			addPreviewSample();
-			removeLoadingScreen();
 		});
 		controlStatus.symbol(document.querySelector(".symbol_A > :first-child"));
 		controlStatus.preview(document.querySelector(".testArea_preview > div > div"));
