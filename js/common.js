@@ -207,7 +207,9 @@
 			}
 		}
 		setSelectboxSize(selectbox);
-		selectbox.addEventListener("change", playListener, false);
+		selectbox.addEventListener("change", function() {
+			setPreviewValue(getOptionLabels(getAllFilterSelectedOptions()));
+		}, false);
 		selectbox.addEventListener("change", function() {
 			setSelectboxSize(this);
 		}, false);
@@ -276,11 +278,6 @@
 		return className.charAt(0) == "@";
 	}
 
-	var isChildAnimation = function() {
-		// var modifiers = getSelectedForChildModifire();
-		// console.log(modi);
-	}
-
 	var updateClass = function(e, classes, remove) {
 		var listener = {
 			handleEvent: animationEndReset,
@@ -305,10 +302,10 @@
 
 		if(isContainsAnimationClass(classes)) {
 			e.offsetWidth = e.offsetWidth; // Animation Restart Trick
-			if(isChildAnimation(classes)) {
-				animationEndResetChildTiming(listener);
-			} else {
+			if(controlStatus.applyType() == "self") {
 				e.addEventListener("animationend", listener, false);
+			} else {
+				animationEndResetChildTiming(listener);
 			}
 		}
 		return e;
@@ -674,8 +671,12 @@
 	}
 
 	var setParameter = function(array) {
-		var parameter = "?" + encodeURI(getOptionLabels(array).join("&"));
-		history.pushState(null, null, parameter);
+		var preParameter = location.href.split("?")[1];
+		var parameter = encodeURI(getOptionLabels(array).join("&"));
+		if(preParameter !== parameter) {
+			var newParameter = "?" + parameter;
+			history.pushState(null, null, newParameter);
+		}
 	}
 
 	var showLoadingScreen = function() {
