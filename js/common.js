@@ -207,12 +207,20 @@
 		}
 		setSelectboxSize(selectbox);
 		selectbox.addEventListener("change", function() {
+			checkChangeApplyType(this);
 			setPreviewValue(getOptionLabels(getAllFilterSelectedOptions()));
-		}, false);
-		selectbox.addEventListener("change", function() {
 			setSelectboxSize(this);
 		}, false);
 		return selectbox;
+	}
+
+	var checkChangeApplyType = function(selectbox) {
+		var selectedOptionTag = getSelectedOptions(selectbox)[0];
+		if(selectedOptionTag.parentNode.label == "Children") {
+			controlStatus.applyType("child");
+			var applyTypeIcon = document.querySelector(".testArea_preview_applyChangeButton");
+			updateClass(applyTypeIcon, ["children"])
+		}
 	}
 
 	var createGroup = function(array) {
@@ -686,7 +694,6 @@
 	}
 
 	var removeLoadingScreen = function() {
-		console.log("a");
 		var screen = document.querySelector(".loading");
 		screen.remove();
 	}
