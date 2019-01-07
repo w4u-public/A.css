@@ -145,16 +145,6 @@
 			"_lv-down++",
 			"_lv-down+++"
 		],
-		"Transform origin": [
-			"_origin-t",
-			"_origin-rt",
-			"_origin-r",
-			"_origin-rb",
-			"_origin-b",
-			"_origin-lb",
-			"_origin-l",
-			"_origin-lt"
-		],
 		"Direction": [
 			"_alt",
 			"_alt-reverse",
@@ -190,6 +180,16 @@
 			"_descend-down+",
 			"_descend-down++",
 			"_descend-down+++"
+		],
+		"Transform origin": [
+			"_origin-t",
+			"_origin-rt",
+			"_origin-r",
+			"_origin-rb",
+			"_origin-b",
+			"_origin-lb",
+			"_origin-l",
+			"_origin-lt"
 		]
 	}
 }

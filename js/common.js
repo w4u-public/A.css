@@ -147,9 +147,9 @@
 		return getFilterNonDoubleOptions(allFilteredOptionTags);
 	}
 
-	var getSelectedForChildModifire = function() {
+	var getSelectedModifire = function(labelName) {
 		return getAllSelectedOptions().mainSelections.filter(function(optionTag) {
-			if(optionTag.parentNode.label == "Children") {
+			if(optionTag.parentNode.label == labelName) {
 				return optionTag;
 		}});
 	}
@@ -218,7 +218,7 @@
 		var selectedOptionTag = getSelectedOptions(selectbox)[0];
 		if(selectedOptionTag.parentNode.label == "Children") {
 			controlStatus.applyType("child");
-			var applyTypeIcon = document.querySelector(".testArea_preview_applyChangeButton");
+			var applyTypeIcon = document.querySelector(".tools_applyChangeButton");
 			updateClass(applyTypeIcon, ["children"])
 		}
 	}
@@ -381,8 +381,8 @@
 		return target.appendChild(selectbox);
 	}
 
-	var addForChildsModifier = function() {
-		if(getSelectedForChildModifire().length) return;
+	var addTargetModifier = function(labelName, selectedLabel) {
+		if(getSelectedModifire(labelName).length) return;
 		var forChildModifier = addSelectboxControllSet({
 			target: controlStatus.mainSelections(),
 			button: createElement({"tagName": "span", "text": "-", "attr": {"class": "controlField_modifier-remove"}}),
@@ -390,13 +390,13 @@
 			className: ["modifier"]
 		});
 		forChildModifier.selectbox.querySelectorAll("option").forEach(function(option) {
-			if(option.label == "_ascend") option.setAttribute("selected", "true");
+			if(option.label == selectedLabel) option.setAttribute("selected", "true");
 		});
 		setSelectboxSize(forChildModifier.selectbox)
 	}
 
-	var removeForChildsModifier = function(array) {
-		var childOrderOptionArray = getSelectedForChildModifire();
+	var removeTargetModifier = function(labelName) {
+		var childOrderOptionArray = getSelectedModifire(labelName);
 		if(!childOrderOptionArray.length) return;
 		childOrderOptionArray.forEach(function(optionTag) {
 			var groupSet = optionTag.parentNode.parentNode.parentNode;
@@ -490,19 +490,20 @@
 		return testArea.insertBefore(fieldset, testArea.firstChild);
 	}
 
-	var assignChangeApplyType = function(e) {
+	var assignChangeApplyType = function() {
+		var button = document.querySelector(".tools_applyChangeButton");
 		if(controlStatus.applyType() == "child") {
-			e.classList.toggle("children");
+			button.classList.toggle("children");
 		}
-		e.addEventListener("click", function() {
-			var selectboxArray = toArray(document.querySelectorAll("select.key"));
+		button.addEventListener("click", function() {
 			controlStatus.applyTypeToggle();
 			this.classList.toggle("children");
 			if(controlStatus.applyType() == "self") {
-				removeForChildsModifier();
+				removeTargetModifier("Children");
 			} else {
-				addForChildsModifier();
+				addTargetModifier("Children", "_ascend");
 			}
+			setPreviewValue(getOptionLabels(getAllFilterSelectedOptions()));
 		}, false);
 	}
 
@@ -698,13 +699,55 @@
 		screen.remove();
 	}
 
+	var assignChangeOrigin = function() {
+		var currentClass = "isCurrent";
+		var buttons = toArray(document.querySelector(".tools_changeOriginButton").children);
+		var modifierBoxs = toArray(document.querySelectorAll("select.modifier"));
+		var showOrigin = null;
+		modifierBoxs.forEach(function(select) {
+			var optionTag = getSelectedOptions(select)[0];
+			if(/_origin-/.test(optionTag.label)) {
+				return showOrigin = optionTag.label;
+			}
+		});
+		if(showOrigin !== null) {
+			buttons.forEach(function(button) {
+				if(button.textContent == showOrigin) {
+					button.classList.add(currentClass)
+				}
+			});
+		}
+		toArray(buttons).forEach(function(li) {
+			li.addEventListener("click", function() {
+				var originName = li.textContent;
+				removeClassBrother(this, currentClass);
+				updateClass(this, [currentClass, "@sc-in!_speed-up_ease-out-back"]);	
+				removeTargetModifier("Transform origin");
+				if(originName !== "none") {
+					addTargetModifier("Transform origin", originName);
+				}
+				setPreviewValue(getOptionLabels(getAllFilterSelectedOptions()));
+			}, false);
+		});
+
+		function removeClassBrother(e, className) {
+			var els = toArray(e.parentNode.children);
+			els.forEach(function(child) {
+				if(child.classList.contains(className)) {
+					child.classList.remove(className);
+				};
+			});
+		}
+	}
+
 	var setup = function() {
 		getJSON("keys.json", function(data) {
 			controlStatus.keys(data.keys);
 			controlStatus.modifiers(data.modifiers);
 			addControllField(".testArea");
 			setParameterSettings();
-			assignChangeApplyType(document.querySelector(".testArea_preview_applyChangeButton"));
+			assignChangeApplyType();
+			assignChangeOrigin()
 			addPreviewSample();
 			// removeLoadingScreen();
 		});
