@@ -14,6 +14,18 @@
 			text-align: center;
 		}
 	</style>
+	<script>
+		window.addEventListener("load", function() {
+			var testClass = "@rt-x-in";
+			var els = Array.prototype.slice.call(document.querySelectorAll("div[class] > div"));
+			els.forEach(function(e) {
+				e.addEventListener("click", function(){
+					this.classList.add(testClass);
+				}, false);
+			})
+		}, false);
+
+	</script>
 </head>
 <body>
 	<h1>A.css</h1>
