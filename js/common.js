@@ -404,10 +404,22 @@
 		});
 	}
 
+	var trackingPage = function() {
+		gtag(
+			'event',
+			'action', {
+				'event_category': 'click',
+				'event_label': 'play',
+				'nonInteraction':' 1'
+			}
+		);
+	}
+
 	var playListener = function() {
 		var selectedOptionTagArray = getAllFilterSelectedOptions();
 		setParameter(selectedOptionTagArray);
 		setPreviewValue(getOptionLabels(selectedOptionTagArray));
+		trackingPage();
 	}
 
 	var addPlayButton = function(target) {
