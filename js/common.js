@@ -281,6 +281,17 @@
 		});
 	}
 
+	var isContainsChildrenModifier = function(classes) {
+		var childrenModifiers = controlStatus.modifiers().Children;
+		for(var className of classes) {
+			for(var modifier of childrenModifiers) {
+				if(className.indexOf(modifier) >= 0) {
+					return true;
+				}
+			}
+		}
+	}
+
 	var isAnimationClass = function(className) {
 		return className.charAt(0) == "@";
 	}
@@ -306,13 +317,12 @@
 		});
 		if(e.classList.length == 0) e.removeAttribute("class");
 		if(remove) return;
-
 		if(isContainsAnimationClass(classes)) {
 			e.offsetWidth = e.offsetWidth; // Animation Restart Trick
-			if(controlStatus.applyType() == "self") {
-				e.addEventListener("animationend", listener, false);
-			} else {
+			if(isContainsChildrenModifier(classes)) {
 				animationEndResetChildTiming(listener);
+			} else {
+				e.addEventListener("animationend", listener, false);
 			}
 		}
 		return e;
