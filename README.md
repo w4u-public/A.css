@@ -6,8 +6,6 @@ CSS Animation library.
 
 This library is using Custom Properties. [Can I use var()](https://caniuse.com/#search=var())
 
-
-
 ## Usage
 ````html
 <head>
