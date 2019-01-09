@@ -523,7 +523,7 @@
 			if(controlStatus.applyType() == "self") {
 				removeTargetModifier("Children");
 			} else {
-				addTargetModifier("Children", "_ascend");
+				addTargetModifier("Children", "_child-ascend");
 			}
 			setPreviewValue(getOptionLabels(getAllFilterSelectedOptions()));
 		}, false);
