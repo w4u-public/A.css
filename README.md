@@ -35,9 +35,10 @@ This library is using Custom Properties. [Can I use var()](https://caniuse.com/#
 ### Ex.
 - [Swoosh](https://w4u-public.github.io/A.css/?@sl-x&_speed-up++&_lv-up+&_ease-out-back&@fd&@sc-x-in!)
 - [Jelly](https://w4u-public.github.io/A.css/?@bn-x&_origin-b&@bn-y!&@sl-y&@fl-y-in)
-- [Wind](https://w4u-public.github.io/A.css/?@rt-y&_ascend&@pr-in&@fd)
-- [Gather](https://w4u-public.github.io/A.css/?@pr-in&_ascend&_ease-out-back&@fd&@sc-in!)
-## Reference tool
+- [Wind](https://w4u-public.github.io/A.css/?@rt-y&_child-ascend&@pr-in&@fd)
+- [Gather](https://w4u-public.github.io/A.css/?@pr-in&_child-ascend&_ease-out-back&@fd&@sc-in!)
+
+## Reference
 ![Reference site](https://w4u-public.github.io/A.css/img/ex_logo_large.png)
 
 <https://w4u-public.github.io/A.css/>
