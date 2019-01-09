@@ -6,33 +6,27 @@
 
 $isImported_modifier-order: true;
 
+[#{$attr}*="_child"] {
+	animation: unset;
+	> * {
+		@extend %animationBase;
+		animation-delay: calc(var(--Aord, 0) * var(--Aorv, 1) * .1s);
+	}
+}
+
+[#{$attr}*="_child-each"] > * {
+	animation-delay: 0;
+}
+
+/*-----------------------
+	Ascend - Descend
+-----------------------*/
+
 $children: 12;
-
-[#{$attr}*="_each"],
-[#{$attr}*="_ascend"],
-[#{$attr}*="_descend"],
-[#{$attr}*="_odd"],
-[#{$attr}*="_even"] {
-	animation-name: unset;
-}
-
-[#{$attr}*="_each"] > * {
-	animation: inherit;
-	animation-name: var(--AN);
-}
-
-[#{$attr}*="_ascend"] > *,
-[#{$attr}*="_descend"] > *,
-[#{$attr}*="_odd"] > *,
-[#{$attr}*="_even"] > * {
-	animation: inherit;
-	animation-name: var(--AN);
-	animation-delay: calc(var(--Aord, 0) * var(--Aorv, 1) * .1s);
-}
 
 /* Ascend */
 
-[#{$attr}*="_ascend"] > * {
+[#{$attr}*="_child-ascend"] > * {
 	@for $i from 2 through $children {
 		&:nth-child(#{$i}) {
 			--Aord: #{$i - 1};
@@ -42,7 +36,7 @@ $children: 12;
 
 /* Descend */
 
-[#{$attr}*="_descend"] > * {
+[#{$attr}*="_child-descend"] > * {
 	@for $i from 2 through $children {
 		&:nth-last-child(#{$i}) {
 			--Aord: #{$i - 1};
@@ -54,13 +48,13 @@ $children: 12;
 	Odd - Even
 -----------------------*/
 
-[#{$attr}*="_odd"] {
+[#{$attr}*="_child-odd"] {
 	> :nth-child(odd) {
 		--Aord: 1;
 	}
 }
 
-[#{$attr}*="_even"] {
+[#{$attr}*="_child-even"] {
 	> :nth-child(even) {
 		--Aord: 1;
 	}
@@ -72,44 +66,44 @@ $children: 12;
 
 /* Up */
 
-[#{$attr}*="_ascend-up"],
-[#{$attr}*="_descend-up"] {
+[#{$attr}*="_child-ascend-up"],
+[#{$attr}*="_child-descend-up"] {
 	--Aorv: .8;
 }
 
-[#{$attr}*="_ascend-up+"],
-[#{$attr}*="_descend-up+"] {
+[#{$attr}*="_child-ascend-up+"],
+[#{$attr}*="_child-descend-up+"] {
 	--Aorv: .4;
 }
 
-[#{$attr}*="_ascend-up++"],
-[#{$attr}*="_descend-up++"] {
+[#{$attr}*="_child-ascend-up++"],
+[#{$attr}*="_child-descend-up++"] {
 	--Aorv: .2;
 }
 
-[#{$attr}*="_ascend-up+++"],
-[#{$attr}*="_descend-up+++"] {
+[#{$attr}*="_child-ascend-up+++"],
+[#{$attr}*="_child-descend-up+++"] {
 	--Aorv: .1;
 }
 
 /* Down */
 
-[#{$attr}*="_ascend-down"],
-[#{$attr}*="_descend-down"] {
+[#{$attr}*="_child-ascend-down"],
+[#{$attr}*="_child-descend-down"] {
 	--Aorv: 1.2;
 }
 
-[#{$attr}*="_ascend-down+"],
-[#{$attr}*="_descend-down+"] {
+[#{$attr}*="_child-ascend-down+"],
+[#{$attr}*="_child-descend-down+"] {
 	--Aorv: 1.4;
 }
 
-[#{$attr}*="_ascend-down++"],
-[#{$attr}*="_descend-down++"] {
+[#{$attr}*="_child-ascend-down++"],
+[#{$attr}*="_child-descend-down++"] {
 	--Aorv: 1.6;
 }
 
-[#{$attr}*="_ascend-down+++"],
-[#{$attr}*="_descend-down+++"] {
+[#{$attr}*="_child-ascend-down+++"],
+[#{$attr}*="_child-descend-down+++"] {
 	--Aorv: 1.8;
 }

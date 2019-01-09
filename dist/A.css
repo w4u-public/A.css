@@ -1,9 +1,9 @@
 /*!
  * A.css - https://github.com/w4u-public/A.css/
- * Version: 1.0a
+ * Version: 1.0
  * License: MIT
  */
-[class*="@fd"], [class*="@sl"], [class*="@rt"], [class*="@sc"], [class*="@sp"], [class*="@vb"], [class*="@pr"], [class*="@bn"], [class*="@sh"], [class*="fl"] {
+[class*="@fd"], [class*="@sl"], [class*="@rt"], [class*="@sc"], [class*="@sp"], [class*="@vb"], [class*="@pr"], [class*="@bn"], [class*="@sh"], [class*="fl"], [class*="_child"] > * {
   animation: var(--AN) calc(var(--AS, 1) * var(--AD, .5) * 1s) var(--AE, ease) var(--AC, 1) var(--ADR, normal) var(--ANM, both);
 }
 
@@ -999,126 +999,119 @@
 	Modifier: Ascend
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-[class*="_each"],
-[class*="_ascend"],
-[class*="_descend"],
-[class*="_odd"],
-[class*="_even"] {
-  animation-name: unset;
+[class*="_child"] {
+  animation: unset;
 }
 
-[class*="_each"] > * {
-  animation: inherit;
-  animation-name: var(--AN);
-}
-
-[class*="_ascend"] > *,
-[class*="_descend"] > *,
-[class*="_odd"] > *,
-[class*="_even"] > * {
-  animation: inherit;
-  animation-name: var(--AN);
+[class*="_child"] > * {
   animation-delay: calc(var(--Aord, 0) * var(--Aorv, 1) * .1s);
 }
 
+[class*="_child-each"] > * {
+  animation-delay: 0;
+}
+
+/*-----------------------
+	Ascend - Descend
+-----------------------*/
 /* Ascend */
-[class*="_ascend"] > *:nth-child(2) {
+[class*="_child-ascend"] > *:nth-child(2) {
   --Aord: 1;
 }
 
-[class*="_ascend"] > *:nth-child(3) {
+[class*="_child-ascend"] > *:nth-child(3) {
   --Aord: 2;
 }
 
-[class*="_ascend"] > *:nth-child(4) {
+[class*="_child-ascend"] > *:nth-child(4) {
   --Aord: 3;
 }
 
-[class*="_ascend"] > *:nth-child(5) {
+[class*="_child-ascend"] > *:nth-child(5) {
   --Aord: 4;
 }
 
-[class*="_ascend"] > *:nth-child(6) {
+[class*="_child-ascend"] > *:nth-child(6) {
   --Aord: 5;
 }
 
-[class*="_ascend"] > *:nth-child(7) {
+[class*="_child-ascend"] > *:nth-child(7) {
   --Aord: 6;
 }
 
-[class*="_ascend"] > *:nth-child(8) {
+[class*="_child-ascend"] > *:nth-child(8) {
   --Aord: 7;
 }
 
-[class*="_ascend"] > *:nth-child(9) {
+[class*="_child-ascend"] > *:nth-child(9) {
   --Aord: 8;
 }
 
-[class*="_ascend"] > *:nth-child(10) {
+[class*="_child-ascend"] > *:nth-child(10) {
   --Aord: 9;
 }
 
-[class*="_ascend"] > *:nth-child(11) {
+[class*="_child-ascend"] > *:nth-child(11) {
   --Aord: 10;
 }
 
-[class*="_ascend"] > *:nth-child(12) {
+[class*="_child-ascend"] > *:nth-child(12) {
   --Aord: 11;
 }
 
 /* Descend */
-[class*="_descend"] > *:nth-last-child(2) {
+[class*="_child-descend"] > *:nth-last-child(2) {
   --Aord: 1;
 }
 
-[class*="_descend"] > *:nth-last-child(3) {
+[class*="_child-descend"] > *:nth-last-child(3) {
   --Aord: 2;
 }
 
-[class*="_descend"] > *:nth-last-child(4) {
+[class*="_child-descend"] > *:nth-last-child(4) {
   --Aord: 3;
 }
 
-[class*="_descend"] > *:nth-last-child(5) {
+[class*="_child-descend"] > *:nth-last-child(5) {
   --Aord: 4;
 }
 
-[class*="_descend"] > *:nth-last-child(6) {
+[class*="_child-descend"] > *:nth-last-child(6) {
   --Aord: 5;
 }
 
-[class*="_descend"] > *:nth-last-child(7) {
+[class*="_child-descend"] > *:nth-last-child(7) {
   --Aord: 6;
 }
 
-[class*="_descend"] > *:nth-last-child(8) {
+[class*="_child-descend"] > *:nth-last-child(8) {
   --Aord: 7;
 }
 
-[class*="_descend"] > *:nth-last-child(9) {
+[class*="_child-descend"] > *:nth-last-child(9) {
   --Aord: 8;
 }
 
-[class*="_descend"] > *:nth-last-child(10) {
+[class*="_child-descend"] > *:nth-last-child(10) {
   --Aord: 9;
 }
 
-[class*="_descend"] > *:nth-last-child(11) {
+[class*="_child-descend"] > *:nth-last-child(11) {
   --Aord: 10;
 }
 
-[class*="_descend"] > *:nth-last-child(12) {
+[class*="_child-descend"] > *:nth-last-child(12) {
   --Aord: 11;
 }
 
 /*-----------------------
 	Odd - Even
 -----------------------*/
-[class*="_odd"] > :nth-child(odd) {
+[class*="_child-odd"] > :nth-child(odd) {
   --Aord: 1;
 }
 
-[class*="_even"] > :nth-child(even) {
+[class*="_child-even"] > :nth-child(even) {
   --Aord: 1;
 }
 
@@ -1126,43 +1119,43 @@
 	Velocity
 -----------------------*/
 /* Up */
-[class*="_ascend-up"],
-[class*="_descend-up"] {
+[class*="_child-ascend-up"],
+[class*="_child-descend-up"] {
   --Aorv: .8;
 }
 
-[class*="_ascend-up+"],
-[class*="_descend-up+"] {
+[class*="_child-ascend-up+"],
+[class*="_child-descend-up+"] {
   --Aorv: .4;
 }
 
-[class*="_ascend-up++"],
-[class*="_descend-up++"] {
+[class*="_child-ascend-up++"],
+[class*="_child-descend-up++"] {
   --Aorv: .2;
 }
 
-[class*="_ascend-up+++"],
-[class*="_descend-up+++"] {
+[class*="_child-ascend-up+++"],
+[class*="_child-descend-up+++"] {
   --Aorv: .1;
 }
 
 /* Down */
-[class*="_ascend-down"],
-[class*="_descend-down"] {
+[class*="_child-ascend-down"],
+[class*="_child-descend-down"] {
   --Aorv: 1.2;
 }
 
-[class*="_ascend-down+"],
-[class*="_descend-down+"] {
+[class*="_child-ascend-down+"],
+[class*="_child-descend-down+"] {
   --Aorv: 1.4;
 }
 
-[class*="_ascend-down++"],
-[class*="_descend-down++"] {
+[class*="_child-ascend-down++"],
+[class*="_child-descend-down++"] {
   --Aorv: 1.6;
 }
 
-[class*="_ascend-down+++"],
-[class*="_descend-down+++"] {
+[class*="_child-ascend-down+++"],
+[class*="_child-descend-down+++"] {
   --Aorv: 1.8;
 }
