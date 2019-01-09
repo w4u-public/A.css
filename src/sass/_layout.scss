@@ -1,0 +1,43 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Layout
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+#header {
+	padding: .6rem 1rem;
+	h1 {
+		font-size: 1rem;
+		font-weight: normal;
+		a {
+			border: none;
+		}
+	}
+}
+
+#content {
+	height: 100%;
+	padding: 0 20px;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+
+}
+
+#footer {
+	@extend %clearfix;
+	margin-top: auto;
+	padding: .6rem 1rem;
+	text-align: right;
+}

@@ -1,0 +1,22 @@
+<%
+	var keywords = pageData.keywords !== '' ? pageData.keywords : 'CSS, Animation, Library';
+	var description = pageData.description !== '' ? pageData.description : 'CSS Animation Library';
+%>	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109690431-2"></script>
+	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-109690431-2');</script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<meta name="keywords" content="<%= keywords %>" />
+	<meta name="description" content="<%= description %>" />
+	<meta property="og:title" content="A.css" />
+	<meta property="og:description" content="CSS Animation Library" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://w4u-public.github.io/A.css/" />
+	<meta property="og:image" content="https://w4u-public.github.io/A.css/img/card.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="https://w4u-public.github.io/A.css/" />
+	<meta name="twitter:image" content="https://w4u-public.github.io/A.css/img/card.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" href="<%= CSS_FOLDER_PATH %>A.min.css" />
+	<link rel="stylesheet" href="<%= CSS_FOLDER_PATH %>main.css" />
+	<script src="<%= JS_FOLDER_PATH %>common.js"></script>

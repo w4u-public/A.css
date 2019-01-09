@@ -1,0 +1,439 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Modules
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+section.download h2,
+section.preview h2 {
+	display: none;
+}
+
+/* ==============================
+
+	.loading
+
+============================== */
+
+.loading {
+	padding-bottom: 10vw;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	color: #000;
+	background-color: #222;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	&_A {
+		font-size: 10vw;
+		animation: A .2s ease infinite;
+	}
+}
+
+@keyframes A {
+	0% {
+		font-family: Georgia;
+	}
+	10% {
+		font-family: "Comic Sans MS";
+	}
+	20% {
+		font-family: Arial;
+	}
+	30% {
+		font-family: Impact;
+	}
+	40% {
+		font-family: "Courier New";
+	}
+	50% {
+		font-family: Impact;
+	}
+	60% {
+		font-family: Georgia;
+	}
+	70% {
+		font-family: "Comic Sans MS";
+	}
+	80% {
+		font-family: "Trebuchet MS";
+	}
+	90% {
+		font-family: "Arial Black";
+	}
+	100% {
+		font-family: "Verdana";
+	}	
+}
+
+/* ==============================
+
+	.indexSymbol
+
+============================== */
+
+.symbol_A {
+	@extend %clearfix;
+	position: relative;
+	margin: 0 auto 3vw;
+	width: 105px;
+	background: url("../img/symbol_A_00.png") no-repeat;
+	> a {
+		@extend %clearfix;
+		display: block;
+		border: none;
+		img {
+			float: left;
+		}
+	}
+	> img {
+		position: absolute;
+		bottom: 0;
+		right: -70px;
+	}
+}
+
+/* ==============================
+
+	.contentsMenu
+
+============================== */
+
+.contentsMenu {
+	margin: 2rem 0 4rem;
+	padding: 0;
+	text-align: center;
+	color: #999;
+	li {
+		margin: 0 .5rem;
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+	}
+	&_github {
+		a {
+			border: none;
+		}
+	}
+}
+
+/* ==============================
+
+	.testArea
+
+============================== */
+
+.testArea {
+	margin-top: 4vw;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+.testArea_preview {
+	margin: 4vw 0;
+	line-height: 1;
+	display: inline-block;
+	text-align: left;
+	> div {
+		margin-top: 3.5vw;
+		position: relative;
+		text-align: center;
+		span.copied {
+			padding: .3rem .4rem;
+			position: absolute;
+			font-size: 1rem;
+			right: 0;
+			top: 0rem;
+			color: #000;
+			font-weight: bold;
+			background-color: #D1FF40;
+			text-transform: uppercase;
+		}
+	}
+	&_valueName {
+		padding: 0;
+		background-color: rgba(0, 0, 0, .2);
+		text-align: center;
+		font-size: 1rem;
+		&:hover {
+			cursor: pointer;
+			color: #aea8e2;
+			background-color: #5014e2;
+			box-shadow: 0 1px 3px rgba(0, 0, 255, .5) inset;
+		}
+	}
+	&_startTag,
+	&_endTag {
+		text-align: left;	
+		display: block;
+		font-family: Menlo, "Osaka－等幅", ”ＭＳ ゴシック”;
+		font-size: 1rem;
+		color: #aaa;
+	}
+	&_startTag {
+		margin-bottom: .5em;
+	}
+	&_endTag {
+		margin-top: 1em;
+	}
+}
+
+/* --------------------
+    Tools
+-------------------- */
+
+.tools {
+	text-align: center;
+	list-style-type: none;
+	> li {
+		padding: 0 1.5rem;
+		border-left: 1px solid #000;
+		display: inline-block;
+		width: 9rem;
+		vertical-align: top;
+		&:first-child {
+			border: none;
+		}
+	}
+}
+
+.tools_applyChangeButton {
+	width: 45px;
+	height: 34px;
+	text-indent: -9999px;
+	display: inline-block;
+	background: url("../img/sprite_button.png") no-repeat -33px top;
+	cursor: pointer;
+	&.children {
+		background-position-y: bottom;
+	}
+}
+
+.tools_changeOriginButton {
+	@extend %clearfix;
+	margin-top: 4px;
+	display: inline-block;
+	list-style-type: none;
+	width: 26px;
+	li {
+		margin: 0 1px 1px 0;
+		width: 8px;
+		height: 8px;
+		text-indent: -9999px;
+		background-color: #444;
+		float: left;
+		cursor: pointer;
+		&:nth-child(3n) {
+			margin: 0;
+		}
+		&:nth-child(5).isCurrent {
+			background-color: #666;
+		}
+		&:hover {
+			background-color: #0083bb;
+		}
+		&.isCurrent {
+			background-color: #0083bb;
+		}
+	}
+}
+
+/* --------------------
+    Preview Sample Changer
+-------------------- */
+
+.testArea_preview_menu {
+	@extend %clearfix;
+	position: absolute;
+	right: 0;
+	bottom: -1.5rem;
+	list-style: none;
+	li {
+		float: left;
+		border: 1px solid #666;
+		display: block;
+		padding: .3rem .5rem;
+		cursor: pointer;
+		&:hover {
+			color: #000;
+			background-color: #ccc;
+		}
+		& + li {
+			margin-left: .5rem;
+		}
+		&.isCurrent {
+			font-weight: bold;
+			color: #000;
+			background-color: #777;
+		}
+	}
+}
+
+[class*="testArea_preview_type-"] {
+	> div {
+		@extend %clearfix;
+		margin: auto;
+		width: 300px;
+		padding: .5rem;
+		border: 1px dashed #999;
+		> * {
+			padding: .5rem;
+			border: 1px solid #666;
+			background-color: rgba(0, 0, 0, .1);
+		}
+	}
+}
+
+.testArea_preview_type-1 {
+	> div {
+		> * {
+			display: none;
+			padding: 2rem 0;
+			&:nth-child(-n+3) {
+				display: block;
+				float: left;
+				width: 32%;
+			}
+			&:nth-child(2) {
+				margin: 0 2%;
+			}
+		}
+	}
+}
+
+.testArea_preview_type-2 {
+	> div {
+		> * {
+			display: none;
+			&:nth-child(-n+4) {
+				display: block;
+			}
+			& + * {
+				margin-top: .5rem;
+			}
+		}
+	}
+}
+
+.testArea_preview_type-3 {
+	> div {
+		> * {
+			display: none;
+			text-align: center;
+			&:nth-child(-n+9) {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.testArea_preview_type-4 {
+	> div {
+		> * {
+			margin: .5%;
+			float: left;
+			width: 24%;
+		}
+	}
+}
+
+/* ==============================
+
+	.controlField
+
+============================== */
+
+.controlField {
+	span.group {
+		margin: .5rem 0;
+		display: inline-block;
+	}
+	&_play {
+		margin: .5rem 0 .5rem 5px;
+		cursor: pointer;
+	}
+}
+
+.controlField_main {
+	margin: 0 auto 4vw;
+	min-width: 200px;
+	display: inline-block;
+	&_selections {
+		display: inline-block;
+	}
+}
+
+.controlField_mix {
+	&_selections {
+		display: inline-block;
+	}
+	.controlField_key-add {
+		position: relative;
+		&:after {
+			position: absolute;
+			top: -50%;
+			left: 100%;
+			content: "";
+			display: block;
+			width: 58px;
+			height: 20px;
+			background: url("../img/mix.png") no-repeat 0 0;
+		}
+	}
+}
+
+/* --------------------
+    Buttons
+-------------------- */
+
+.controlField {
+	&_modifier-add,
+	&_modifier-remove,
+	&_key-add,
+	&_key-remove {
+		margin: 0 8px;
+		position: relative;
+		top: .3rem;
+		display: inline-block;
+		width: 11px;
+		height: 11px;
+		text-indent: -9999px;
+		cursor: pointer;
+		&:hover {
+			background-position-y: bottom;
+		}
+	}
+	&_modifier-add {
+		background: url("../img/sprite_button.png") no-repeat 0 0;
+	}
+	&_modifier-remove,
+	&_key-remove {
+		background: url("../img/sprite_button.png") no-repeat -11px 0;
+	}
+	&_key-add {
+
+		background: url("../img/sprite_button.png") no-repeat -22px 0;
+	}
+}
+
+/* --------------------
+	Copyright
+-------------------- */
+
+.copyright {
+	float: left;
+	font-size: 1rem;
+}
+
+/* --------------------
+	Feedback
+-------------------- */
+
+.feedback {
+	list-style: none;
+}

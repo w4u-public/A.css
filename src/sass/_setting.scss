@@ -1,0 +1,146 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	Settings
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* --------------------
+	Valiables
+-------------------- */
+
+
+/* --------------------
+	%clearfix
+-------------------- */
+
+%clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+/* --------------------
+	%overray
+-------------------- */
+
+%overray {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* --------------------
+	%cornerFrame
+-------------------- */
+
+%cornerFrame {
+	border: 1px solid #eee;
+	position: relative;
+}
+
+%cornerFrame,
+%cornerFrame > *:first-child {
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		height: 10px;
+		width: 10px;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: -1px;
+		border: 1px solid #000;
+	}
+	&:before {
+		left: -1px;
+		border-width: 1px 0 0 1px;
+	}
+	&:after {
+		right: -1px;
+		border-width: 1px 1px 0 0;
+	}
+}
+
+%cornerFrame > *:first-child {
+	&:before,
+	&:after {
+		top: auto;
+		bottom: -1px;
+	}
+	&:before {
+		border-width: 0 0 1px 1px;
+	}
+	&:after {
+		border-width: 0 1px 1px 0;
+	}
+}
+
+/* ==============================
+
+    Scrollbar
+
+============================== */
+
+/*-----------------------
+	scrollbar
+-----------------------*/
+
+main > section > div.content:hover::-webkit-scrollbar-thumb {
+	background-color: #000;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 3px;
+	&:hover {
+		background-color: #222;
+	}
+}
+
+::-webkit-scrollbar-button {
+	background-color: rgba(0,0,0,.2);
+	display: block;
+	border-bottom: 2px solid #666;
+}
+
+::-webkit-scrollbar-button:hover {
+	background-color: #fff;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(0,0,0,.1);
+}
+
+::-webkit-scrollbar-track-piece {
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #ccc;
+	&:hover {
+		background-color: #fff;
+	}
+}
+
+::-webkit-scrollbar-corner {
+	border: 1px solid #000;
+}
+
+pre::-webkit-scrollbar {
+	width: 0px;
+	height: 12px;
+}
+
+pre::-webkit-scrollbar-thumb {
+	background-color: #666;
+}
+
+pre:hover::-webkit-scrollbar-thumb {
+	background-color: #fff;
+}
+
