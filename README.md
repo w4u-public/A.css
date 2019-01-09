@@ -35,7 +35,12 @@ This library is using Custom Properties. [Can I use var()](https://caniuse.com/#
 - [Jelly](https://w4u-public.github.io/A.css/?@bn-x&_origin-b&@bn-y!&@sl-y&@fl-y-in)
 - [Wind](https://w4u-public.github.io/A.css/?@rt-y&_child-ascend&@pr-in&@fd)
 - [Gather](https://w4u-public.github.io/A.css/?@pr-in&_child-ascend&_ease-out-back&@fd&@sc-in!)
+<<<<<<< HEAD
 ## Reference tool
+=======
+
+## Reference
+>>>>>>> d4417aaf697a51f5b5c4b4dba2c57312e8699e04
 ![Reference site](https://w4u-public.github.io/A.css/img/ex_logo_large.png)
 
 <https://w4u-public.github.io/A.css/>
@@ -76,7 +81,7 @@ This library is using Custom Properties. [Can I use var()](https://caniuse.com/#
 	- _repeat
 	- _repeat-2
 	- _repeat-3
-	- Speed
+- Speed
 	- _speed-up
 	- _speed-up+
 	- _speed-up++
