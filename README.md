@@ -35,8 +35,8 @@ This library is using Custom Properties. [Can I use var()](https://caniuse.com/#
 ### Ex.
 - [Swoosh](https://w4u-public.github.io/A.css/?@sl-x&_speed-up++&_lv-up+&_ease-out-back&@fd&@sc-x-in!)
 - [Jelly](https://w4u-public.github.io/A.css/?@bn-x&_origin-b&@bn-y!&@sl-y&@fl-y-in)
-- [Wind](https://w4u-public.github.io/A.css/?@rt-y&_ascend&@pr-in&@fd)
-- [Gather](https://w4u-public.github.io/A.css/?@pr-in&_ascend&_ease-out-back&@fd&@sc-in!)
+- [Wind](https://w4u-public.github.io/A.css/?@rt-y&_child-ascend&@pr-in&@fd)
+- [Gather](https://w4u-public.github.io/A.css/?@pr-in&_child-ascend&_ease-out-back&@fd&@sc-in!)
 ## Reference tool
 ![Reference site](https://w4u-public.github.io/A.css/img/ex_logo_large.png)
 
@@ -117,27 +117,27 @@ This library is using Custom Properties. [Can I use var()](https://caniuse.com/#
 	- _delay-5
 	- _delay-6
 - Children
-	- _ascend
-	- _descend
-	- _odd
-	- _even
-	- _each
-	- _ascend-up
-	- _ascend-up+
-	- _ascend-up++
-	- _ascend-up+++
-	- _ascend-down
-	- _ascend-down+
-	- _ascend-down++
-	- _ascend-down+++
-	- _descend-up
-	- _descend-up+
-	- _descend-up++
-	- _descend-up+++
-	- _descend-down
-	- _descend-down+
-	- _descend-down++
-	- _descend-down+++
+	- _child-ascend
+	- _child-descend
+	- _child-odd
+	- _child-even
+	- _child-each
+	- _child-ascend-up
+	- _child-ascend-up+
+	- _child-ascend-up++
+	- _child-ascend-up+++
+	- _child-ascend-down
+	- _child-ascend-down+
+	- _child-ascend-down++
+	- _child-ascend-down+++
+	- _child-descend-up
+	- _child-descend-up+
+	- _child-descend-up++
+	- _child-descend-up+++
+	- _child-descend-down
+	- _child-descend-down+
+	- _child-descend-down++
+	- _child-descend-down+++
 
 ## Licence
 MIT
