@@ -219,7 +219,7 @@
 		if(selectedOptionTag.parentNode.label == "Children") {
 			controlStatus.applyType("child");
 			var applyTypeIcon = document.querySelector(".tools_applyChangeButton");
-			updateClass(applyTypeIcon, ["children"])
+			applyTypeIcon.classList.add("children");
 		}
 	}
 
@@ -296,94 +296,11 @@
 		return className.charAt(0) == "@";
 	}
 
-	var updateClass = function(e, classes, remove) {
-		var listener = {
-			handleEvent: animationEndReset,
-			e: e,
-			classes: classes,
-			callback: function() {
-				var animClass = this.classes.filter(function(className) {
-					return isAnimationClass(className)
-				});
-				return updateClass(this.e, animClass, true);
-			}
-		}
-		classes.forEach(function(value) {
-			if(remove) {
-				e.classList.remove(value);
-			} else {
-				e.classList.add(value);
-			}
-		});
-		if(e.classList.length == 0) e.removeAttribute("class");
-		if(remove) return;
-		if(isContainsAnimationClass(classes)) {
-			e.offsetWidth = e.offsetWidth; // Animation Restart Trick
-			if(isContainsChildrenModifier(classes)) {
-				animationEndResetChildTiming(listener);
-			} else {
-				e.addEventListener("animationend", listener, false);
-			}
-		}
-		return e;
-	}
-
 	var addPreviewClass = function(e, classes) {
-		var listener = {
-			handleEvent: animationEndReset,
-			e: e,
-			classes: classes,
-			callback: function(target) {
-				target.removeAttribute("class");
-			}
-		}
 		e.removeAttribute("class");
 		e.offsetWidth = e.offsetWidth; // Animation Restart Trick
-		classes.forEach(function(value) {
-			e.classList.add(value);
-		});
-		if(controlStatus.applyType() == "self") {
-			e.addEventListener("animationend", listener, false);
-		} else {
-			animationEndResetChildTiming(listener);
-		}
+		animClass(e, classes.join(" "));
 		return e;
-	}
-
-	var animationEndReset = function() {
-		if(this.callback) this.callback(this.e);
-		this.e.removeEventListener("animationend", this, false);
-	}
-
-	var animationEndResetChildTiming = function(listener) {
-		var counter = function() {
-			var count = 0;
-			var member = 0;
-			return {
-				memberCount: function(n) {
-					if(n) member = n;
-					return member;
-				},
-				increment: function() {
-					count += 1;
-					return count;
-				}
-			}
-		}
-		var status = counter();
-		var children = toArray(listener.e.children);
-		status.memberCount(children.length);
-		children.forEach(function(child) {
-			child.addEventListener("animationend", animationEndResetChildren, false);
-		})
-
-		function animationEndResetChildren() {
-			var c = status.increment();
-			if(c == status.memberCount()) {
-				if(listener.callback) listener.callback(listener.e);
-			}
-			this.removeEventListener("animationend", animationEndResetChildren, false);
-		}
 	}
 
 	var addKeySelectbox = function(target) {
@@ -414,22 +331,10 @@
 		});
 	}
 
-	var trackingPage = function() {
-		gtag(
-			'event',
-			'action', {
-				'event_category': 'click',
-				'event_label': 'play',
-				'nonInteraction':' 1'
-			}
-		);
-	}
-
 	var playListener = function() {
 		var selectedOptionTagArray = getAllFilterSelectedOptions();
 		setParameter(selectedOptionTagArray);
 		setPreviewValue(getOptionLabels(selectedOptionTagArray));
-		trackingPage();
 	}
 
 	var addPlayButton = function(target) {
@@ -452,7 +357,7 @@
 			this.parentNode.parentNode.removeChild(this.parentNode);
 		}, false);
 		var group = obj.target.appendChild(createGroup([button, selectbox]));
-		updateClass(group, ["@bn-y:_speed-up++_lv-up++_origin-b_ascend", "@sl-y", "@sc-y-in", "@fd"]);
+		animClass(group, "@bn-y:_speed-up++_lv-up++_origin-b_ascend @sl-y @sc-y-in @fd");
 		return {
 			"selectbox": selectbox,
 			"button": button,
@@ -465,7 +370,7 @@
 		var mainSelections = createElement({"tagName": "div", "attr": {"class": "controlField_main_selections"}});
 		mainContorolWrapper.appendChild(mainSelections);
 		controlStatus.mainSelections(mainSelections);
-		updateClass(addFirstModifireAddButton(), ["@bn_speed-up+_lv-up"]);
+		animClass(addFirstModifireAddButton(), "@bn_speed-up+_lv-up");
 		addKeySelectbox(mainSelections);
 		addPlayButton(mainContorolWrapper);
 
@@ -514,6 +419,7 @@
 
 	var assignChangeApplyType = function() {
 		var button = document.querySelector(".tools_applyChangeButton");
+		animClass(button, "@fl-z_lv-down++_origin-t");
 		if(controlStatus.applyType() == "child") {
 			button.classList.toggle("children");
 		}
@@ -723,7 +629,9 @@
 
 	var assignChangeOrigin = function() {
 		var currentClass = "isCurrent";
-		var buttons = toArray(document.querySelector(".tools_changeOriginButton").children);
+		var button = document.querySelector(".tools_changeOriginButton");
+		var buttons = toArray(button.children);
+		animClass(button, "@pr-up+++ @pr-in_child-descend-up+ @rt-y");
 		var modifierBoxs = toArray(document.querySelectorAll("select.modifier"));
 		var showOrigin = null;
 		modifierBoxs.forEach(function(select) {
@@ -743,7 +651,8 @@
 			li.addEventListener("click", function() {
 				var originName = li.textContent;
 				removeClassBrother(this, currentClass);
-				updateClass(this, [currentClass, "@sc-in!_speed-up_ease-out-back"]);	
+				animClass(this, "@sc-in!_speed-up_ease-out-back");	
+				this.classList.add(currentClass);
 				removeTargetModifier("Transform origin");
 				if(originName !== "none") {
 					addTargetModifier("Transform origin", originName);
@@ -771,7 +680,7 @@
 			assignChangeApplyType();
 			assignChangeOrigin()
 			addPreviewSample();
-			// removeLoadingScreen();
+			removeLoadingScreen();
 		});
 		controlStatus.symbol(document.querySelector(".symbol_A > :first-child"));
 		controlStatus.preview(document.querySelector(".testArea_preview > div > div"));
@@ -783,7 +692,7 @@
 	===================== */
 
 	window.addEventListener("DOMContentLoaded", function() {
-		// showLoadingScreen();
+		showLoadingScreen();
 	}, false);
 
 	window.addEventListener("load", setup, false);
