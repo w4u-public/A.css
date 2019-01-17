@@ -1,15 +1,15 @@
 (function() {
 
 	var controlStatus = (function() {
-		var keys = null;
-		var modifiers = null;
-		var mainSelections = null;
-		var mixSelections = null;
-		var synbolWrapper = null;
-		var preview = null;
-		var keySelects = []
-		var modifierSelects = [];
-		var applyType = "self";
+		var keys = null,
+			modifiers = null,
+			mainSelections = null,
+			mixSelections = null,
+			synbolWrapper = null,
+			preview = null,
+			keySelects = [],
+			modifierSelects = [],
+			applyType = "self";
 		return {
 			mainSelections: function(e) {
 				if(e) mainSelections = e;
@@ -39,7 +39,7 @@
 				if(type) applyType = type;
 				return applyType;
 			},
-			applyTypeToggle: function() {
+			toggleApplyType: function() {
 				if(applyType == "self") {
 					applyType = "child";
 				} else {
@@ -50,25 +50,16 @@
 		}
 	})();
 
-	var isObject = function(data) {
-		return (Object.prototype.toString.call(data) == '[object Object]') ? true : false;
+	var isObject = function(o) {
+		return (Object.prototype.toString.call(o) == '[object Object]') ? true : false;
 	}
 
-	var isArray = function(data) {
-		return data instanceof Array;
-	}
-
-	var getBrowserName = function() {
-		var ua = window.navigator.userAgent.toLowerCase();
-		var ver = window.navigator.appVersion.toLowerCase();
-		var name = "unknown";
-		if(ua.indexOf(ua.indexOf("trident/7") != -1)) {
-
-		}
+	var isArray = function(o) {
+		return o instanceof Array;
 	}
 
 	var toArray = function(arrayLike) {
-		return Array.prototype.slice.call(arrayLike);
+		return [].slice.call(arrayLike);
 	}
 
 	var copyTextToClipboard = function(e) {
@@ -135,8 +126,8 @@
 
 	var getAllSelectedOptions = function() {
 		return {
-			"mainSelections": getSelectedOptions(controlStatus.mainSelections()),
-			"mixSelections": getSelectedOptions(controlStatus.mixSelections())
+			mainSelections: getSelectedOptions(controlStatus.mainSelections()),
+			mixSelections: getSelectedOptions(controlStatus.mixSelections())
 		}
 	}
 
@@ -154,17 +145,17 @@
 		}});
 	}
 
-	var createElement = function(obj) {
-		var e = document.createElement(obj.tagName);
-		if(obj.text) e.textContent = obj.text;
-		if(obj.attr) {
-			for(attr in obj.attr) {
-				if(attr == "class" && isArray(obj.attr[attr])) {
-					obj.attr[attr].forEach(function(className) {
+	var createElement = function(o) {
+		var e = document.createElement(o.tagName);
+		if(o.text) e.textContent = o.text;
+		if(o.attr) {
+			for(attr in o.attr) {
+				if(attr == "class" && isArray(o.attr[attr])) {
+					o.attr[attr].forEach(function(className) {
 						e.classList.add(className);
 					});
 				} else {
-					e.setAttribute(attr, obj.attr[attr]);
+					e.setAttribute(attr, o.attr[attr]);
 				}
 			}
 		}
@@ -178,11 +169,11 @@
 		return optionTagArray;
 	}
 
-	var createOptgroups = function(obj) {
+	var createOptgroups = function(o) {
 		var opgroupsArray = [];
-		for(var key in obj) {
+		for(var key in o) {
 			var optgroup = createElement({"tagName": "optgroup", "attr": {"label": key}});
-			createOptions(obj[key]).forEach(function(optionTag) {
+			createOptions(o[key]).forEach(function(optionTag) {
 				optgroup.appendChild(optionTag);
 			});
 			opgroupsArray.push(optgroup);
@@ -192,15 +183,14 @@
 
 	var createSelectbox = function(optionData, classes) {
 		var selectbox = document.createElement("select");
-		var opgroups = createOptgroups(optionData);
-		opgroups.forEach(function(optionTag) {
+		createOptgroups(optionData).forEach(function(optionTag) {
 			selectbox.appendChild(optionTag);	
 		});
 		if(classes) {
 			if(isArray(classes)) {
 				classes.forEach(function(className) {
 					selectbox.classList.add(className);
-				})
+				});
 			} else {
 				selectbox.classList.add(classes);
 			}
@@ -424,7 +414,7 @@
 			button.classList.toggle("children");
 		}
 		button.addEventListener("click", function() {
-			controlStatus.applyTypeToggle();
+			controlStatus.toggleApplyType();
 			this.classList.toggle("children");
 			if(controlStatus.applyType() == "self") {
 				removeTargetModifier("Children");
@@ -631,7 +621,7 @@
 		var currentClass = "isCurrent";
 		var button = document.querySelector(".tools_changeOriginButton");
 		var buttons = toArray(button.children);
-		animClass(button, "@pr-up+++ @pr-in_child-descend-up+ @rt-y");
+		animClass(button, "@pr-in_child-ascend-up+ @sc-in @fd");
 		var modifierBoxs = toArray(document.querySelectorAll("select.modifier"));
 		var showOrigin = null;
 		modifierBoxs.forEach(function(select) {
